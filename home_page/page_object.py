@@ -1,35 +1,4 @@
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# import time
-#
-#
-# class HomePage(object):
-#     def find_why_vpn(self):
-#         # Находим и кликаем по элементам
-#         why_vpn = self.web_driver.find_element(By.CSS_SELECTOR,
-#                                                "#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div")
-#         why_vpn.click()
-#         time.sleep(3)
-#         what_is_a_vpn = self.web_driver.find_element(By.LINK_TEXT, 'What is a VPN?')
-#         what_is_a_vpn.click()
-#         time.sleep(3)
-#         self.web_driver.quit()
-#
-#     def find_no_logs(self):
-#         why_vpn = self.web_driver.find_element(By.CSS_SELECTOR,
-#                                                "#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div")
-#         why_vpn.click()
-#         no_logs = self.web_driver.find_element(By.LINK_TEXT, 'No logs')
-#         no_logs.click()
-#         time.sleep(3)
-#         self.web_driver.quit()
-#
-#     def get_title(self):
-#         # Возвращает текущий заголовок страницы
-#         return self.web_driver.title
 import time
-
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
@@ -47,10 +16,11 @@ class HomePage:
                                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
         why_vpn.click()
         time.sleep(2)
+        # find what_is_vpn button
         what_is_vpn = self.driver.find_element(By.LINK_TEXT, 'What is a VPN?')
         what_is_vpn.click()
         time.sleep(2)
-        # find h1 what is vpn
+        # find h1 what_is_vpn
         h1_wat_is_vpn = self.driver.find_element(By.TAG_NAME, 'h1')
         return h1_wat_is_vpn
 
@@ -222,7 +192,6 @@ class HomePage:
         h1_online_anonymity = self.driver.find_element(By.TAG_NAME, 'h1')
         return h1_online_anonymity
 
-
     def find_elements_advantages_data_encryption(self):
         advantages = self.driver.find_element(By.CSS_SELECTOR,
                                               '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(2) > div > div')
@@ -235,4 +204,3 @@ class HomePage:
         # find h1 data_encryption
         h1_data_encryption = self.driver.find_element(By.TAG_NAME, 'h1')
         return h1_data_encryption
-
