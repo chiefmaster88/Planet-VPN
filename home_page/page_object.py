@@ -42,7 +42,6 @@ class HomePage:
         why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
         why_vpn_element.click()
 
-
         # find no_logs_locator & click
         no_logs_locator = (By.LINK_TEXT, 'No logs')
         no_logs_element = wait.until(EC.visibility_of_element_located(no_logs_locator))
@@ -64,7 +63,6 @@ class HomePage:
         why_vpn_element = wait.until(EC.visibility_of_element_located(why_vpn_locator))
         why_vpn_element.click()
 
-
         # find what_is_proxy locator & click
         what_is_proxy_locator = (By.LINK_TEXT, 'What is Proxy')
         what_is_proxy_element = wait.until(EC.visibility_of_element_located(what_is_proxy_locator))
@@ -83,7 +81,6 @@ class HomePage:
                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
         why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
         why_vpn_element.click()
-
 
         # find our_vpn_network locator & click
         our_vpn_network_locator = (By.LINK_TEXT, 'Our VPN network')
@@ -105,14 +102,13 @@ class HomePage:
                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
         why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
         why_vpn_element.click()
-
+        time.sleep(2)
 
         # find about_vpn_protocols locator & click
         about_vpn_locator = (By.LINK_TEXT, 'About VPN protocols')
         about_vpn_element = wait.until(EC.presence_of_element_located(about_vpn_locator))
         about_vpn_element.click()
         time.sleep(2)
-
 
         # find h1 about_vpn_protocols
         h1_locator = (By.TAG_NAME, 'h1')
@@ -127,7 +123,7 @@ class HomePage:
                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
         why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
         why_vpn_element.click()
-
+        time.sleep(2)
 
         # find free_vpn locator & click
         free_vpn_locator = (By.LINK_TEXT, 'Free VPN')
@@ -353,8 +349,8 @@ class HomePage:
         android_locator = (By.LINK_TEXT, 'Android')
         android_element = wait.until(EC.visibility_of_element_located(android_locator))
         android_element.click()
-
         time.sleep(2)
+
         return self.driver
 
     def find_elements_products_chrome_pop_up(self):
@@ -369,8 +365,8 @@ class HomePage:
         chrome_locator = (By.LINK_TEXT, 'Chrome')
         chrome_elements = wait.until(EC.presence_of_element_located(chrome_locator))
         chrome_elements.click()
-
         time.sleep(2)
+
         return self.driver
 
     def find_elements_products_windows_pop_up(self):
@@ -388,4 +384,3 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
-
