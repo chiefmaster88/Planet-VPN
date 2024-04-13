@@ -1,5 +1,4 @@
 import time
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,97 +14,150 @@ class HomePage:
         self.driver.get(HomePage.url)
 
     def find_elements_why_vpn_wats_is_vpn(self):
-        # why_vpn_locator = (By.CSS_SELECTOR, '')
-        why_vpn = self.driver.find_element(By.CSS_SELECTOR,
-                                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
-        why_vpn.click()
-        wait = WebDriverWait(self.driver, 5)
+        # find why_vpn_locator & click
+        wait = WebDriverWait(self.driver, 10)
+        why_vpn_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
+        why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
+        why_vpn_element.click()
+
+        # find what_is_vpn locator & click
         what_is_vpn_locator = (By.LINK_TEXT, 'What is a VPN?')
         what_is_vpn_element = wait.until(EC.visibility_of_element_located(what_is_vpn_locator))
         what_is_vpn_element.click()
-
         time.sleep(2)
+
         # find h1 what_is_vpn
-        h1_wat_is_vpn = self.driver.find_element(By.TAG_NAME, 'h1')
-        return h1_wat_is_vpn
+        h1_locator = (By.CSS_SELECTOR, 'h1')
+        h1_element = wait.until(EC.visibility_of_element_located(h1_locator))
+
+        return h1_element
 
     def find_elements_why_vpn_no_logs(self):
-        why_vpn = self.driver.find_element(By.CSS_SELECTOR,
-                                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
-        why_vpn.click()
-        wait = WebDriverWait(self.driver, 5)
+        # find why_vpn_locator & click
+
+        wait = WebDriverWait(self.driver, 10)
+        why_vpn_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
+        why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
+        why_vpn_element.click()
+
+
+        # find no_logs_locator & click
         no_logs_locator = (By.LINK_TEXT, 'No logs')
         no_logs_element = wait.until(EC.visibility_of_element_located(no_logs_locator))
         no_logs_element.click()
-
         time.sleep(2)
+
         # find h1 no_logs
-        h1_nologs = self.driver.find_element(By.TAG_NAME, 'h1')
-        return h1_nologs
+        h1_locator = (By.CSS_SELECTOR, 'h1')
+        h1_nologs_element = wait.until(EC.visibility_of_element_located(h1_locator))
+
+        return h1_nologs_element
 
     def find_elements_why_vpn_what_is_proxy(self):
-        why_vpn = self.driver.find_element(By.CSS_SELECTOR,
-                                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
-        why_vpn.click()
+        # find why_vpn_locator & click
+
+        wait = WebDriverWait(self.driver, 10)
+        why_vpn_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
+        why_vpn_element = wait.until(EC.visibility_of_element_located(why_vpn_locator))
+        why_vpn_element.click()
+
+
+        # find what_is_proxy locator & click
+        what_is_proxy_locator = (By.LINK_TEXT, 'What is Proxy')
+        what_is_proxy_element = wait.until(EC.visibility_of_element_located(what_is_proxy_locator))
+        what_is_proxy_element.click()
         time.sleep(2)
-        # find what_is_proxy button
-        what_is_proxy = self.driver.find_element(By.LINK_TEXT, 'What is Proxy')
-        what_is_proxy.click()
-        time.sleep(2)
+
         # find h1 what_is_proxy
-        h1_what_is_proxy = self.driver.find_element(By.TAG_NAME, 'h1')
-        return h1_what_is_proxy
+        h1_locator = (By.TAG_NAME, 'h1')
+        h1_element = wait.until(EC.visibility_of_element_located(h1_locator))
+        return h1_element
 
     def find_elements_why_vpn_our_vpn_network(self):
-        why_vpn = self.driver.find_element(By.CSS_SELECTOR,
-                                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
-        why_vpn.click()
+        # find why_vpn_locator & click
+        wait = WebDriverWait(self.driver, 10)
+        why_vpn_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
+        why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
+        why_vpn_element.click()
+
+
+        # find our_vpn_network locator & click
+        our_vpn_network_locator = (By.LINK_TEXT, 'Our VPN network')
+        our_vpn_network_element = wait.until(EC.visibility_of_element_located(our_vpn_network_locator))
+        our_vpn_network_element.click()
         time.sleep(2)
-        # find our_vpn_network button
-        our_vpn_network = self.driver.find_element(By.LINK_TEXT, 'Our VPN network')
-        our_vpn_network.click()
-        time.sleep(2)
+
         # find h1 our_vpn_network
-        h1_our_vpn_network = self.driver.find_element(By.TAG_NAME, 'h1')
-        return h1_our_vpn_network
+
+        h1_locator = (By.TAG_NAME, 'h1')
+        h1_element = wait.until(EC.visibility_of_element_located(h1_locator))
+
+        return h1_element
 
     def find_elemets_why_vpn_about_vpn_protocols(self):
-        why_vpn = self.driver.find_element(By.CSS_SELECTOR,
-                                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
-        why_vpn.click()
+        # find why_vpn_locator & click
+        wait = WebDriverWait(self.driver, 10)
+        why_vpn_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
+        why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
+        why_vpn_element.click()
+
+
+        # find about_vpn_protocols locator & click
+        about_vpn_locator = (By.LINK_TEXT, 'About VPN protocols')
+        about_vpn_element = wait.until(EC.presence_of_element_located(about_vpn_locator))
+        about_vpn_element.click()
         time.sleep(2)
-        # find about_vpn_protocols button
-        about_vpn_protocols = self.driver.find_element(By.LINK_TEXT, 'About VPN protocols')
-        about_vpn_protocols.click()
-        time.sleep(2)
+
+
         # find h1 about_vpn_protocols
-        h1_about_vpn_protocols = self.driver.find_element(By.TAG_NAME, 'h1')
-        return h1_about_vpn_protocols
+        h1_locator = (By.TAG_NAME, 'h1')
+        h1_element = wait.until(EC.visibility_of_element_located(h1_locator))
+
+        return h1_element
 
     def find_elements_why_vpn_free_vpn(self):
-        why_vpn = self.driver.find_element(By.CSS_SELECTOR,
-                                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
-        why_vpn.click()
+        # find why_vpn_locator & click
+        wait = WebDriverWait(self.driver, 10)
+        why_vpn_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
+        why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
+        why_vpn_element.click()
+
+
+        # find free_vpn locator & click
+        free_vpn_locator = (By.LINK_TEXT, 'Free VPN')
+        free_vpn_element = wait.until(EC.visibility_of_element_located(free_vpn_locator))
+        free_vpn_element.click()
         time.sleep(2)
-        # find free_vpn button
-        free_vpn = self.driver.find_element(By.LINK_TEXT, 'Free VPN')
-        free_vpn.click()
-        time.sleep(2)
+
         # find h1 free_vpn
-        h1_free_vpn = self.driver.find_element(By.TAG_NAME, 'h1')
-        return h1_free_vpn
+        h1_locator = (By.TAG_NAME, 'h1')
+        h1_element = wait.until(EC.visibility_of_element_located(h1_locator))
+
+        return h1_element
 
     def find_elements_why_vpn_close_pop_up(self):
-        why_vpn = self.driver.find_element(By.CSS_SELECTOR,
-                                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
-        why_vpn.click()
-        time.sleep(2)
-        # find close image x
-        close_pop_up = self.driver.find_element(By.CSS_SELECTOR,
-                                                '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div.nav-menu-item.expanded > div.nav-menu-item__submenu.about > div > button > img')
-        close_pop_up.click()
-        time.sleep(2)
-        return close_pop_up
+        # find why_vpn_locator & click
+        wait = WebDriverWait(self.driver, 10)
+        why_vpn_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
+        why_vpn_element = wait.until(EC.presence_of_element_located(why_vpn_locator))
+        why_vpn_element.click()
+
+        # find close image locator & click
+        close_pop_up_locator = (By.CSS_SELECTOR,
+                                '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div.nav-menu-item.expanded > div.nav-menu-item__submenu.about > div > button > img')
+        close_pop_up_element = wait.until(EC.visibility_of_element_located(close_pop_up_locator))
+        close_pop_up_element.click()
+
+        is_pop_up_closed = wait.until(EC.invisibility_of_element_located(close_pop_up_locator))
+
+        return is_pop_up_closed
 
     def find_elements_advantages_access(self):
         advantages = self.driver.find_element(By.CSS_SELECTOR,
@@ -118,6 +170,7 @@ class HomePage:
         time.sleep(2)
         # find h1
         h1_element = self.driver.find_element(By.TAG_NAME, 'h1')
+
         return h1_element
 
     def find_elements_advantages_steam(self):
@@ -131,6 +184,7 @@ class HomePage:
 
         # find h1_steam
         h1_steam = self.driver.find_element(By.TAG_NAME, 'h1')
+
         return h1_steam
 
     def find_elements_advantages_preventing_surveillance(self):
@@ -291,18 +345,17 @@ class HomePage:
     def find_elements_products_android_pop_up(self):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
-        products_locator = (By.CSS_SELECTOR, '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(3) > div > div')
+        products_locator = (By.CSS_SELECTOR,
+                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(3) > div > div')
         products_elements = wait.until(EC.presence_of_element_located(products_locator))
         products_elements.click()
         # find product locator and click
         android_locator = (By.LINK_TEXT, 'Android')
         android_element = wait.until(EC.visibility_of_element_located(android_locator))
         android_element.click()
-        # find h1 android
-        h1_locator = (By.TAG_NAME, 'h1')
-        time.sleep(1)
-        h1_element = wait.until(EC.presence_of_element_located(h1_locator))
-        return h1_element
+
+        time.sleep(2)
+        return self.driver
 
     def find_elements_products_chrome_pop_up(self):
         # find product locator and click
@@ -317,8 +370,22 @@ class HomePage:
         chrome_elements = wait.until(EC.presence_of_element_located(chrome_locator))
         chrome_elements.click()
 
-        # find h1 chrome
-        h1_locator = (By.TAG_NAME, 'h1')
-        time.sleep(1)
-        h1_element = wait.until(EC.visibility_of_element_located(h1_locator))
-        return h1_element
+        time.sleep(2)
+        return self.driver
+
+    def find_elements_products_windows_pop_up(self):
+        # find product locator and click
+        wait = WebDriverWait(self.driver, 10)
+        products_locator = (By.CSS_SELECTOR,
+                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(3) > div > div')
+        products_elements = wait.until(EC.presence_of_element_located(products_locator))
+        products_elements.click()
+
+        # find windows locator & click
+        windows_locator = (By.LINK_TEXT, 'Windows')
+        windows_elements = wait.until(EC.visibility_of_element_located(windows_locator))
+        windows_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
