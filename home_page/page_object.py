@@ -1,5 +1,8 @@
 import time
+
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class HomePage:
@@ -11,14 +14,16 @@ class HomePage:
     def go_to(self):
         self.driver.get(HomePage.url)
 
-    def find_elemts_why_vpn_wats_is_vpn(self):
+    def find_elements_why_vpn_wats_is_vpn(self):
+        # why_vpn_locator = (By.CSS_SELECTOR, '')
         why_vpn = self.driver.find_element(By.CSS_SELECTOR,
                                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
         why_vpn.click()
-        time.sleep(2)
-        # find what_is_vpn button
-        what_is_vpn = self.driver.find_element(By.LINK_TEXT, 'What is a VPN?')
-        what_is_vpn.click()
+        wait = WebDriverWait(self.driver, 5)
+        what_is_vpn_locator = (By.LINK_TEXT, 'What is a VPN?')
+        what_is_vpn_element = wait.until(EC.visibility_of_element_located(what_is_vpn_locator))
+        what_is_vpn_element.click()
+
         time.sleep(2)
         # find h1 what_is_vpn
         h1_wat_is_vpn = self.driver.find_element(By.TAG_NAME, 'h1')
@@ -28,10 +33,11 @@ class HomePage:
         why_vpn = self.driver.find_element(By.CSS_SELECTOR,
                                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
         why_vpn.click()
-        time.sleep(2)
-        # find no_logs button
-        no_logs = self.driver.find_element(By.LINK_TEXT, 'No logs')
-        no_logs.click()
+        wait = WebDriverWait(self.driver, 5)
+        no_logs_locator = (By.LINK_TEXT, 'No logs')
+        no_logs_element = wait.until(EC.visibility_of_element_located(no_logs_locator))
+        no_logs_element.click()
+
         time.sleep(2)
         # find h1 no_logs
         h1_nologs = self.driver.find_element(By.TAG_NAME, 'h1')
@@ -94,7 +100,7 @@ class HomePage:
                                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(1) > div > div')
         why_vpn.click()
         time.sleep(2)
-        # find close image
+        # find close image x
         close_pop_up = self.driver.find_element(By.CSS_SELECTOR,
                                                 '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div.nav-menu-item.expanded > div.nav-menu-item__submenu.about > div > button > img')
         close_pop_up.click()
@@ -204,3 +210,115 @@ class HomePage:
         # find h1 data_encryption
         h1_data_encryption = self.driver.find_element(By.TAG_NAME, 'h1')
         return h1_data_encryption
+
+    def find_elements_avantages_music(self):
+        advantages = self.driver.find_element(By.CSS_SELECTOR,
+                                              '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(2) > div > div')
+        advantages.click()
+        time.sleep(2)
+        # find music button
+        music = self.driver.find_element(By.LINK_TEXT, 'Music')
+        music.click()
+        time.sleep(2)
+        # find h1_music
+        h1_music = self.driver.find_element(By.TAG_NAME, 'h1')
+        return h1_music
+
+    def find_elements_advantages_booking_hotels(self):
+        advantages = self.driver.find_element(By.CSS_SELECTOR,
+                                              '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(2) > div > div')
+        advantages.click()
+        time.sleep(2)
+        # find booking_hotels button
+        booking_hotels = self.driver.find_element(By.LINK_TEXT, 'Booking Hotels')
+        booking_hotels.click()
+        time.sleep(2)
+        # find h1 booking_hotels
+        h1_booking_hotels = self.driver.find_element(By.TAG_NAME, 'h1')
+        return h1_booking_hotels
+
+    def find_elements_advantages_change_or_hid_ip(self):
+        advantages = self.driver.find_element(By.CSS_SELECTOR,
+                                              '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(2) > div > div')
+        advantages.click()
+        time.sleep(2)
+        # find change_or_hid_ip button
+        change_or_hid_ip = self.driver.find_element(By.LINK_TEXT, 'Change or Hide your IP')
+        change_or_hid_ip.click()
+        time.sleep(2)
+        # find h1 change_or_gide_ip
+        h1_change_or_hid_ip = self.driver.find_element(By.TAG_NAME, 'h1')
+        return h1_change_or_hid_ip
+
+    def find_elements_advantages_car_rentals(self):
+        advantages = self.driver.find_element(By.CSS_SELECTOR,
+                                              '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(2) > div > div')
+        advantages.click()
+        time.sleep(2)
+        # find car_rentals button
+        car_rentals = self.driver.find_element(By.LINK_TEXT, 'Car Rentals')
+        car_rentals.click()
+        time.sleep(2)
+        # find h1 car_rentals
+        h1_car_rentals = self.driver.find_element(By.TAG_NAME, 'h1')
+        return h1_car_rentals
+
+    def find_elements_advantages_torrents(self):
+        advantages = self.driver.find_element(By.CSS_SELECTOR,
+                                              '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(2) > div > div')
+        advantages.click()
+        time.sleep(2)
+        # find torrents button
+        torrents = self.driver.find_element(By.LINK_TEXT, 'Torrents')
+        torrents.click()
+        time.sleep(2)
+        # find h1 torrents
+        h1_torrents = self.driver.find_element(By.TAG_NAME, 'h1')
+        return h1_torrents
+
+    def find_elements_advantages_close_pop_up(self):
+        advantages = self.driver.find_element(By.CSS_SELECTOR,
+                                              '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(2) > div > div')
+        advantages.click()
+        time.sleep(2)
+        # find close pop_up img x
+        close_pop_up = self.driver.find_element(By.CSS_SELECTOR,
+                                                '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div.nav-menu-item.expanded > div.nav-menu-item__submenu.advantages > div > button')
+        close_pop_up.click()
+        time.sleep(2)
+        return close_pop_up
+
+    def find_elements_products_android_pop_up(self):
+        # find product locator and click
+        wait = WebDriverWait(self.driver, 10)
+        products_locator = (By.CSS_SELECTOR, '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(3) > div > div')
+        products_elements = wait.until(EC.presence_of_element_located(products_locator))
+        products_elements.click()
+        # find product locator and click
+        android_locator = (By.LINK_TEXT, 'Android')
+        android_element = wait.until(EC.visibility_of_element_located(android_locator))
+        android_element.click()
+        # find h1 android
+        h1_locator = (By.TAG_NAME, 'h1')
+        time.sleep(1)
+        h1_element = wait.until(EC.presence_of_element_located(h1_locator))
+        return h1_element
+
+    def find_elements_products_chrome_pop_up(self):
+        # find product locator and click
+        wait = WebDriverWait(self.driver, 10)
+        products_locator = (By.CSS_SELECTOR,
+                            '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__menu > nav > div.nav-menu__menu > div:nth-child(3) > div > div')
+        products_elements = wait.until(EC.presence_of_element_located(products_locator))
+        products_elements.click()
+
+        # find chrome locator and click
+        chrome_locator = (By.LINK_TEXT, 'Chrome')
+        chrome_elements = wait.until(EC.presence_of_element_located(chrome_locator))
+        chrome_elements.click()
+
+        # find h1 chrome
+        h1_locator = (By.TAG_NAME, 'h1')
+        time.sleep(1)
+        h1_element = wait.until(EC.visibility_of_element_located(h1_locator))
+        return h1_element
