@@ -5,13 +5,13 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class HomePage:
-    url = 'https://freevpnplanet.com/'
 
     def __init__(self, browser):
         self.driver = browser
 
+
     def go_to(self):
-        self.driver.get(HomePage.url)
+        pass
 
     def find_elements_why_vpn_wats_is_vpn(self):
         # find why_vpn_locator & click
@@ -130,7 +130,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -162,7 +162,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -178,7 +178,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -210,7 +210,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -242,7 +242,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -258,7 +258,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -274,7 +274,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -306,7 +306,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -322,7 +322,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -338,7 +338,7 @@ class HomePage:
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
-        By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
+            By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/nav/div[2]/div[2]/div/div')
         advantages_element = wait.until(EC.visibility_of_element_located(advantages_locator))
         advantages_element.click()
 
@@ -663,4 +663,24 @@ class HomePage:
         planet_vpn_logo_elements.click()
 
         time.sleep(2)
+        return self.driver
+
+    def find_elements_download_vpn(self):
+        # find download locator & click
+        wait = WebDriverWait(self.driver, 10)
+        download_locator = (By.LINK_TEXT, 'Download VPN')
+        download_elements = wait.until(EC.visibility_of_element_located(download_locator))
+        download_elements.click()
+
+        time.sleep(1)
+        return self.driver
+
+    def find_elements_login(self):
+        # find login locator & click
+        wait = WebDriverWait(self.driver, 10)
+        login_locator = (By.LINK_TEXT, 'Login')
+        login_elements = wait.until(EC.visibility_of_element_located(login_locator))
+        login_elements.click()
+
+        time.sleep(1)
         return self.driver

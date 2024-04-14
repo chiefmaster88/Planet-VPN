@@ -1,3 +1,5 @@
+import time
+
 from home_page.page_object import HomePage
 import pytest
 
@@ -383,3 +385,21 @@ def test_planet_vpn(browser):
     planet_vpn_button = planet_vpn.find_elements_planet_vpn_logo()
 
     assert planet_vpn_button.title == 'Free VPN – best free online VPN, fast and secure | Planet VPN'
+
+
+@pytest.mark.download
+def test_download_button(browser):
+    download_button = HomePage(browser)
+    download_button.go_to()
+    download = download_button.find_elements_download_vpn()
+
+    assert download.title == 'Free VPN Download - For all Devices with no Limits | Planet VPN'
+
+
+@pytest.mark.login
+def test_login_button(browser):
+    login_button = HomePage(browser)
+    login_button.go_to()
+    login = login_button.find_elements_login()
+
+    assert login.title == 'Login'
