@@ -144,7 +144,7 @@ class HomePage:
 
         return is_pop_up_closed
 
-    def find_elements_advantages_access_pop_up(self):
+    def find_elements_advantages_access_pop_up(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -157,10 +157,13 @@ class HomePage:
         access_element = wait.until(EC.visibility_of_element_located(access_locator))
         access_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_steam(self):
+    def find_elements_advantages_steam(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -173,10 +176,13 @@ class HomePage:
         steam_element = wait.until(EC.visibility_of_element_located(steam_locator))
         steam_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_preventing_surveillance(self):
+    def find_elements_advantages_preventing_surveillance(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -189,10 +195,13 @@ class HomePage:
         preventing_element = wait.until(EC.visibility_of_element_located(preventing_locator))
         preventing_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_secure_wi_fi(self):
+    def find_elements_advantages_secure_wi_fi(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -205,10 +214,13 @@ class HomePage:
         wi_fi_element = wait.until(EC.visibility_of_element_located(wi_fi_locator))
         wi_fi_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_streaming(self):
+    def find_elements_advantages_streaming(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -221,10 +233,13 @@ class HomePage:
         streaming_element = wait.until(EC.visibility_of_element_located(streaming_locator))
         streaming_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_airline_tickets(self):
+    def find_elements_advantages_airline_tickets(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -237,10 +252,13 @@ class HomePage:
         air_line_element = wait.until(EC.visibility_of_element_located(air_line_locator))
         air_line_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_online_anonymity(self):
+    def find_elements_advantages_online_anonymity(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -253,10 +271,13 @@ class HomePage:
         anonymity_element = wait.until(EC.visibility_of_element_located(anonymity_locator))
         anonymity_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_data_encryption(self):
+    def find_elements_advantages_data_encryption(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -269,10 +290,13 @@ class HomePage:
         data_element = wait.until(EC.visibility_of_element_located(data_locator))
         data_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_music(self):
+    def find_elements_advantages_music(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -285,10 +309,13 @@ class HomePage:
         music_element = wait.until(EC.visibility_of_element_located(music_locator))
         music_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_booking_hotels(self):
+    def find_elements_advantages_booking_hotels(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -301,10 +328,13 @@ class HomePage:
         booking_hotels_element = wait.until(EC.visibility_of_element_located(booking_hotels_locator))
         booking_hotels_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_change_or_hid_ip(self):
+    def find_elements_advantages_change_or_hid_ip(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -317,10 +347,12 @@ class HomePage:
         hide_ip_element = wait.until(EC.visibility_of_element_located(hide_ip_locator))
         hide_ip_element.click()
 
-        time.sleep(2)
-        return self.driver
-
-    def find_elements_advantages_car_rentals(self):
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
+    def find_elements_advantages_car_rentals(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -333,10 +365,13 @@ class HomePage:
         car_rentals_element = wait.until(EC.visibility_of_element_located(car_rentals_locator))
         car_rentals_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_advantages_torrents(self):
+    def find_elements_advantages_torrents(self, expected_title):
         # find advantages locator & click
         wait = WebDriverWait(self.driver, 10)
         advantages_locator = (
@@ -349,8 +384,11 @@ class HomePage:
         torrents_element = wait.until(EC.visibility_of_element_located(torrents_locator))
         torrents_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
     def find_elements_advantages_close_pop_up(self):
         # find advantages locator & click

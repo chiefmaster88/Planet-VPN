@@ -79,27 +79,33 @@ def test_pop_up_why_vpn_close_pop_up(browser):
 def test_pop_up_advantages_access_to_games_and_movies(browser):
     pop_up = HomePage(browser)
     pop_up.go_to()
-    advantages_access = pop_up.find_elements_advantages_access_pop_up()
+    expected_title = 'Free VPN for access Gaming and Streaming | Planet VPN'
 
-    assert advantages_access.title == 'Free VPN for access Gaming and Streaming | Planet VPN'
+    assert pop_up.find_elements_advantages_access_pop_up(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_steam(browser):
     pop_up = HomePage(browser)
     pop_up.go_to()
-    advantages_steam = pop_up.find_elements_advantages_steam()
+    expected_title = 'Free VPN for Steam - How to use a VPN to unlock Steam - Planet VPN'
 
-    assert advantages_steam.title == 'Free VPN for Steam - How to use a VPN to unlock Steam - Planet VPN'
+    assert pop_up.find_elements_advantages_steam(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_preventing_surveillance(browser):
     pop_up = HomePage(browser)
     pop_up.go_to()
-    advantages_preventing_surveillance = pop_up.find_elements_advantages_preventing_surveillance()
+    expected_title = 'Free VPN for Internet Protection - Protect your data online'
 
-    assert advantages_preventing_surveillance.title == 'Free VPN for Internet Protection - Protect your data online'
+    assert pop_up.find_elements_advantages_preventing_surveillance(expected_title)
+
+
 
 
 #
@@ -107,9 +113,11 @@ def test_pop_up_advantages_preventing_surveillance(browser):
 def test_pop_up_advantages_secure_wi_fi(browser):
     pop_up = HomePage(browser)
     pop_up.go_to()
-    advantages_secure_wi = pop_up.find_elements_advantages_secure_wi_fi()
+    expected_title = 'Free VPN for public WiFi - Secure Your Wi-Fi Connection - Planet VPN'
 
-    assert advantages_secure_wi.title == 'Free VPN for public WiFi - Secure Your Wi-Fi Connection - Planet VPN'
+    assert pop_up.find_elements_advantages_secure_wi_fi(expected_title)
+
+
 
 
 #
@@ -118,81 +126,99 @@ def test_pop_up_advantages_secure_wi_fi(browser):
 def test_pop_up_advantages_streaming(browser):
     popup = HomePage(browser)
     popup.go_to()
-    advantages_streaming = popup.find_elements_advantages_streaming()
+    expected_title = 'Live streaming With free VPN - Live Sports With a VPN - Planet VPN'
 
-    assert advantages_streaming.title == 'Live streaming With free VPN - Live Sports With a VPN - Planet VPN'
+    assert popup.find_elements_advantages_streaming(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_airline_tickets(browser):
     popup = HomePage(browser)
     popup.go_to()
-    advantages_airline_tickets = popup.find_elements_advantages_airline_tickets()
+    expected_title = 'Save Money on Flights With a free VPN - Planet VPN'
 
-    assert advantages_airline_tickets.title == 'Save Money on Flights With a free VPN - Planet VPN'
+    assert popup.find_elements_advantages_airline_tickets(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_online_anonymity(browser):
     popup = HomePage(browser)
     popup.go_to()
-    advantages_online_anonymity = popup.find_elements_advantages_online_anonymity()
+    expected_title = 'Free VPN for anonymous browsing and surfing - Planet VPN'
 
-    assert advantages_online_anonymity.title == 'Free VPN for anonymous browsing and surfing - Planet VPN'
+    assert popup.find_elements_advantages_online_anonymity(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_data_encryption(browser):
     popup = HomePage(browser)
     popup.go_to()
-    advantages_data_encryption = popup.find_elements_advantages_data_encryption()
+    expected_title = 'Data encryption with free VPN - Planet VPN'
 
-    assert advantages_data_encryption.title == 'Data encryption with free VPN - Planet VPN'
+    assert popup.find_elements_advantages_data_encryption(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_music(browser):
     popup = HomePage(browser)
     popup.go_to()
-    music = popup.find_elements_advantages_music()
+    expected_title = 'VPN for downloading and listen music - your favorite music with VPN'
 
-    assert music.title == 'VPN for downloading and listen music - your favorite music with VPN'
+    assert popup.find_elements_advantages_music(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_booking_hotels(browser):
     popup = HomePage(browser)
     popup.go_to()
-    booking_hotels = popup.find_elements_advantages_booking_hotels()
+    expected_title = 'Save on Hotels booking with free VPN - How to save money'
 
-    assert booking_hotels.title == 'Save on Hotels booking with free VPN - How to save money'
+    assert popup.find_elements_advantages_booking_hotels(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_change_or_hide_ip(browser):
     popup = HomePage(browser)
     popup.go_to()
-    change_or_hide_ip = popup.find_elements_advantages_change_or_hid_ip()
+    expected_title = 'How to Change and Hide IP address with a free VPN - Planet VPN'
 
-    assert change_or_hide_ip.title == 'How to Change and Hide IP address with a free VPN - Planet VPN'
+    assert popup.find_elements_advantages_change_or_hid_ip(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_car_rentals(browser):
     popup = HomePage(browser)
     popup.go_to()
-    car_rentals = popup.find_elements_advantages_car_rentals()
+    expected_title = 'Save money renting cars with free VPN - ways to save - Free VPN'
 
-    assert car_rentals.title == 'Save money renting cars with free VPN - ways to save - Free VPN'
+    assert popup.find_elements_advantages_car_rentals(expected_title)
+
+
 
 
 @pytest.mark.advantages
 def test_pop_up_advantages_car_torrents(browser):
     popup = HomePage(browser)
     popup.go_to()
-    car_torrents = popup.find_elements_advantages_torrents()
+    expected_title = 'Free P2P VPN - Download and Set Up VPN'
 
-    assert car_torrents.title == 'Free P2P VPN - Download and Set Up VPN'
+    assert popup.find_elements_advantages_torrents(expected_title)
+
+
 
 
 @pytest.mark.advantages
