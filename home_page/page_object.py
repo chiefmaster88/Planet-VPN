@@ -9,7 +9,6 @@ class HomePage:
     def __init__(self, browser):
         self.driver = browser
 
-
     def go_to(self):
         pass
 
@@ -672,7 +671,7 @@ class HomePage:
         download_elements = wait.until(EC.visibility_of_element_located(download_locator))
         download_elements.click()
 
-        time.sleep(1)
+        time.sleep(2)
         return self.driver
 
     def find_elements_login(self):
@@ -683,4 +682,49 @@ class HomePage:
         login_elements.click()
 
         time.sleep(1)
+        return self.driver
+
+    def find_elements_localizations_pt(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find pt locator & click
+        pt_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[10]')
+        pt_elements = wait.until(EC.visibility_of_element_located(pt_locator))
+        pt_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+    def find_elements_localizations_ro(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find ro locator & click
+        ro_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[11]')
+        ro_elements = wait.until(EC.visibility_of_element_located(ro_locator))
+        ro_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+    def find_elements_localizations_ru(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find ru locator & click
+        ru_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[12]')
+        ru_elements = wait.until(EC.visibility_of_element_located(ru_locator))
+        ru_elements.click()
+
+        time.sleep(2)
         return self.driver

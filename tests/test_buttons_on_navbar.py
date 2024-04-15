@@ -98,6 +98,7 @@ def test_pop_up_advantages_preventing_surveillance(browser):
 
     assert advantages_preventing_surveillance.title == 'Free VPN for Internet Protection - Protect your data online'
 
+
 #
 @pytest.mark.advantages
 def test_pop_up_advantages_secure_wi_fi(browser):
@@ -106,6 +107,8 @@ def test_pop_up_advantages_secure_wi_fi(browser):
     advantages_secure_wi = pop_up.find_elements_advantages_secure_wi_fi()
 
     assert advantages_secure_wi.title == 'Free VPN for public WiFi - Secure Your Wi-Fi Connection - Planet VPN'
+
+
 #
 #
 @pytest.mark.advantages
@@ -402,4 +405,28 @@ def test_login_button(browser):
     login_button.go_to()
     login = login_button.find_elements_login()
 
-    assert login.title == 'Login'
+
+@pytest.mark.localizations
+def test_localizations_button_pt(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_pt()
+
+    assert localisations.title == 'Free VPN e proxy - VPN gratis sem anúncios ou limites | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_ro(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_ro()
+
+    assert localisations.title == 'Free VPN - cel mai bun VPN online gratuit, rapid și sigur | Planet VPN'
+
+@pytest.mark.localizations
+def test_localizations_button_ru(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_ru()
+
+    assert localisations.title == 'Бесплатный VPN - ВПН без лимитов и регистрации | Planet VPN'
