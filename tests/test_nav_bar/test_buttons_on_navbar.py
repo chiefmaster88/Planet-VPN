@@ -237,153 +237,185 @@ def test_pop_up_advantages_close_pop_up(browser):
 def test_pop_up_products_android(browser):
     popup = HomePage(browser)
     popup.go_to()
-    android = popup.find_elements_products_android_pop_up()
+    expected_title = 'Free VPN for Android - download best fast and safe VPN - Planet VPN'
 
-    assert android.title == 'Free VPN for Android - download best fast and safe VPN - Planet VPN'
+    assert popup.find_elements_products_android_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_chrome(browser):
     popup = HomePage(browser)
     popup.go_to()
-    chrome = popup.find_elements_products_chrome_pop_up()
+    expected_title = 'Free VPN for Chrome - download vpn Chrome extension - Planet VPN'
 
-    assert chrome.title == 'Free VPN for Chrome - download vpn Chrome extension - Planet VPN'
+    assert popup.find_elements_products_chrome_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_windows(browser):
     popup = HomePage(browser)
     popup.go_to()
-    windows = popup.find_elements_products_windows_pop_up()
+    expected_title = 'Free VPN for Windows - download without any limits - Planet VPN'
 
-    assert windows.title == 'Free VPN for Windows - download without any limits - Planet VPN'
+    assert popup.find_elements_products_windows_pop_up(expected_title)
 
 
 @pytest.mark.products
 def test_pop_up_products_router(browser):
     popup = HomePage(browser)
     popup.go_to()
-    router = popup.find_elements_products_router_pop_up()
+    expected_title = 'VPN router configuration - setup vpn on router - Planet VPN'
 
-    assert router.title == 'VPN router configuration - setup vpn on router - Planet VPN'
+    assert popup.find_elements_products_router_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_dns_leak_test(browser):
     popup = HomePage(browser)
     popup.go_to()
-    dns_leak_test = popup.find_elements_dns_leak_pop_up()
+    expected_title = 'DNS check - Online DNS propagation check - Planet VPN'
 
-    assert dns_leak_test.title == 'DNS check - Online DNS propagation check - Planet VPN'
+    assert popup.find_elements_dns_leak_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_ios(browser):
     popup = HomePage(browser)
     popup.go_to()
-    ios = popup.find_elements_products_ios_pop_up()
+    expected_title = 'Free VPN iOS - VPN for iPhone and iPad without limits - Planet VPN'
 
-    assert ios.title == 'Free VPN iOS - VPN for iPhone and iPad without limits - Planet VPN'
+    assert popup.find_elements_products_ios_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_firefox(browser):
     popup = HomePage(browser)
     popup.go_to()
-    firefox = popup.find_elements_products_firefox_po_up()
+    expected_title = 'Free VPN for Firefox - download firefox vpn extension - Planet VPN'
 
-    assert firefox.title == 'Free VPN for Firefox - download firefox vpn extension - Planet VPN'
+    assert popup.find_elements_products_firefox_po_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_macos(browser):
     popup = HomePage(browser)
     popup.go_to()
-    macos = popup.find_elements_products_macos_pop_up()
+    expected_title = 'Free VPN for Mac - best client for macOS - Planet VPN'
 
-    assert macos.title == 'Free VPN for Mac - best client for macOS - Planet VPN'
+    assert popup.find_elements_products_macos_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_open_vpn(browser):
     popup = HomePage(browser)
     popup.go_to()
-    openvpn = popup.find_elements_products_open_vpn_pop_up()
+    expected_title = 'OpenVPN configurations - client configurations for Windows - Planet VPN'
 
-    assert openvpn.title == 'OpenVPN configurations - client configurations for Windows - Planet VPN'
+    assert popup.find_elements_products_open_vpn_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_web_rtc(browser):
     popup = HomePage(browser)
     popup.go_to()
-    web_rtc = popup.find_elements_products_web_rtc_pop_up()
+    expected_title = 'WebRTC leak shield - online leak test - Planet VPN'
 
-    assert web_rtc.title == 'WebRTC leak shield - online leak test - Planet VPN'
+    assert popup.find_elements_products_web_rtc_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_edge(browser):
     popup = HomePage(browser)
     popup.go_to()
-    edge = popup.find_elements_products_edge()
+    expected_title = 'Free VPN Edge - download extension for Edge - Planet VPN'
 
-    assert edge.title == 'Free VPN Edge - download extension for Edge - Planet VPN'
+    assert popup.find_elements_products_edge(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_linux(browser):
     popup = HomePage(browser)
     popup.go_to()
-    linux = popup.find_elements_products_linux()
+    expected_title = 'Free VPN for Linux - best for Linux without registration - Planet VPN'
 
-    assert linux.title == 'Free VPN for Linux - best for Linux without registration - Planet VPN'
+    assert popup.find_elements_products_linux(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_virus_scan(browser):
     popup = HomePage(browser)
     popup.go_to()
-    virus_scan = popup.find_elements_products_virus_scan_pop_up()
+    expected_title = 'Free virus scan - check for viruses by file or url - Planet VPN'
 
-    assert virus_scan.title == 'Free virus scan - check for viruses by file or url - Planet VPN'
+    assert popup.find_elements_products_virus_scan_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_opera(browser):
     popup = HomePage(browser)
     popup.go_to()
-    opera = popup.find_elements_products_opera_pop_up()
+    expected_title = 'Free VPN for Opera - best free Opera extension - Planet VPN'
 
-    assert opera.title == 'Free VPN for Opera - best free Opera extension - Planet VPN'
+    assert popup.find_elements_products_opera_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_what_is_my_ip(browser):
     popup = HomePage(browser)
     popup.go_to()
-    what_is_my_ip = popup.find_elements_products_what_is_my_ip_pop_up()
+    expected_title = 'What is my IP? Check my IP online - Planet VPN'
 
-    assert what_is_my_ip.title == 'What is my IP? Check my IP online - Planet VPN'
+    assert popup.find_elements_products_what_is_my_ip_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_yandex(browser):
     popup = HomePage(browser)
     popup.go_to()
-    yandex = popup.find_elements_product_yandex_pop_up()
+    expected_title = 'Free VPN for Yandex Browser - vpn extension - Planet VPN'
 
-    assert yandex.title == 'Free VPN for Yandex Browser - vpn extension - Planet VPN'
+    assert popup.find_elements_product_yandex_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products
 def test_pop_up_products_password_generator(browser):
     popup = HomePage(browser)
     popup.go_to()
-    password_generator = popup.find_elements_products_password_generator_pop_up()
+    expected_title = 'Password generator - random and strong password - Planet VPN'
 
-    assert password_generator.title == 'Password generator - random and strong password - Planet VPN'
+    assert popup.find_elements_products_password_generator_pop_up(expected_title)
+
+
 
 
 @pytest.mark.products

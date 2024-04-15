@@ -406,7 +406,7 @@ class HomePage:
 
         return is_pop_up_closed
 
-    def find_elements_products_android_pop_up(self):
+    def find_elements_products_android_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -417,11 +417,14 @@ class HomePage:
         android_locator = (By.LINK_TEXT, 'Android')
         android_element = wait.until(EC.visibility_of_element_located(android_locator))
         android_element.click()
-        time.sleep(2)
 
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_chrome_pop_up(self):
+    def find_elements_products_chrome_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -433,11 +436,14 @@ class HomePage:
         chrome_locator = (By.LINK_TEXT, 'Chrome')
         chrome_elements = wait.until(EC.presence_of_element_located(chrome_locator))
         chrome_elements.click()
-        time.sleep(2)
 
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_windows_pop_up(self):
+    def find_elements_products_windows_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -450,10 +456,13 @@ class HomePage:
         windows_elements = wait.until(EC.visibility_of_element_located(windows_locator))
         windows_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_router_pop_up(self):
+    def find_elements_products_router_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -466,10 +475,13 @@ class HomePage:
         router_elements = wait.until(EC.visibility_of_element_located(router_locator))
         router_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_dns_leak_pop_up(self):
+    def find_elements_dns_leak_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -482,10 +494,13 @@ class HomePage:
         dns_elements = wait.until(EC.visibility_of_element_located(dns_locator))
         dns_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_ios_pop_up(self):
+    def find_elements_products_ios_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -498,10 +513,13 @@ class HomePage:
         ios_elements = wait.until(EC.visibility_of_element_located(ios_locator))
         ios_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_firefox_po_up(self):
+    def find_elements_products_firefox_po_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -514,10 +532,13 @@ class HomePage:
         firefox_elements = wait.until(EC.visibility_of_element_located(firefox_locator))
         firefox_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_macos_pop_up(self):
+    def find_elements_products_macos_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -530,10 +551,13 @@ class HomePage:
         macos_elements = wait.until(EC.visibility_of_element_located(macos_locator))
         macos_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_open_vpn_pop_up(self):
+    def find_elements_products_open_vpn_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -546,10 +570,13 @@ class HomePage:
         open_vpn_elements = wait.until(EC.visibility_of_element_located(open_vpn_locator))
         open_vpn_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_web_rtc_pop_up(self):
+    def find_elements_products_web_rtc_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -562,10 +589,13 @@ class HomePage:
         web_rtc_elements = wait.until(EC.visibility_of_element_located(web_rtc_locator))
         web_rtc_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_edge(self):
+    def find_elements_products_edge(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -578,10 +608,13 @@ class HomePage:
         edges_elements = wait.until(EC.visibility_of_element_located(edges_locator))
         edges_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_linux(self):
+    def find_elements_products_linux(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -595,10 +628,13 @@ class HomePage:
         linux_elements = wait.until(EC.visibility_of_element_located(linux_locator))
         linux_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_virus_scan_pop_up(self):
+    def find_elements_products_virus_scan_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -611,10 +647,13 @@ class HomePage:
         virus_scan_elements = wait.until(EC.visibility_of_element_located(virus_scan_locator))
         virus_scan_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_opera_pop_up(self):
+    def find_elements_products_opera_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -627,10 +666,13 @@ class HomePage:
         opera_elements = wait.until(EC.visibility_of_element_located(opera_locator))
         opera_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_what_is_my_ip_pop_up(self):
+    def find_elements_products_what_is_my_ip_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -643,10 +685,13 @@ class HomePage:
         what_is_my_elements = wait.until(EC.visibility_of_element_located(what_is_my_locator))
         what_is_my_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_product_yandex_pop_up(self):
+    def find_elements_product_yandex_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -659,10 +704,13 @@ class HomePage:
         yandex_elements = wait.until(EC.visibility_of_element_located(yandex_locator))
         yandex_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_products_password_generator_pop_up(self):
+    def find_elements_products_password_generator_pop_up(self, expected_title):
         # find product locator and click
         wait = WebDriverWait(self.driver, 10)
         products_locator = (By.CSS_SELECTOR,
@@ -675,8 +723,11 @@ class HomePage:
         password_generator_elements = wait.until(EC.visibility_of_element_located(password_generator_locator))
         password_generator_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
     def find_elements_product_close_pop_up(self):
         # find product locator and click
