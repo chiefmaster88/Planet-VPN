@@ -405,6 +405,8 @@ def test_login_button(browser):
     login_button.go_to()
     login = login_button.find_elements_login()
 
+    assert login.title == 'Login'
+
 
 @pytest.mark.localizations
 def test_localizations_button_pt(browser):
@@ -422,6 +424,7 @@ def test_localizations_button_ro(browser):
     localisations = localisations_button.find_elements_localizations_ro()
 
     assert localisations.title == 'Free VPN - cel mai bun VPN online gratuit, rapid și sigur | Planet VPN'
+
 
 @pytest.mark.localizations
 def test_localizations_button_ru(browser):
@@ -556,7 +559,3 @@ def test_localizations_button_pl(browser):
     localisations = localisations_button.find_elements_localizations_pl()
 
     assert localisations.title == 'Darmowy VPN – najlepszy VPN online, szybki i bezpieczny | Planet VPN'
-
-
-
-

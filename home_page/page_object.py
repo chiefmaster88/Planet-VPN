@@ -681,7 +681,7 @@ class HomePage:
         login_elements = wait.until(EC.visibility_of_element_located(login_locator))
         login_elements.click()
 
-        time.sleep(1)
+        time.sleep(2)
         return self.driver
 
     def find_elements_localizations_pt(self):
@@ -729,7 +729,6 @@ class HomePage:
         time.sleep(2)
         return self.driver
 
-
     def find_elements_localizations_sv(self):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
@@ -744,7 +743,6 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
-
 
     def find_elements_localizations_th(self):
         # find localizations locator & click
@@ -761,7 +759,6 @@ class HomePage:
         time.sleep(2)
         return self.driver
 
-
     def find_elements_localizations_tl(self):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
@@ -776,7 +773,6 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
-
 
     def find_elements_localizations_tr(self):
         # find localizations locator & click
@@ -793,7 +789,6 @@ class HomePage:
         time.sleep(2)
         return self.driver
 
-
     def find_elements_localizations_ua(self):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
@@ -808,7 +803,6 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
-
 
     def find_elements_localizations_ar(self):
         # find localizations locator & click
@@ -825,7 +819,6 @@ class HomePage:
         time.sleep(2)
         return self.driver
 
-
     def find_elements_localizations_cs(self):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
@@ -840,7 +833,6 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
-
 
     def find_elements_localizations_de(self):
         # find localizations locator & click
@@ -883,7 +875,6 @@ class HomePage:
         time.sleep(2)
         return self.driver
 
-
     def find_elements_localizations_es(self):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
@@ -898,7 +889,6 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
-
 
     def find_elements_localizations_fr(self):
         # find localizations locator & click
@@ -915,7 +905,6 @@ class HomePage:
         time.sleep(2)
         return self.driver
 
-
     def find_elements_localizations_id(self):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
@@ -930,7 +919,6 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
-
 
     def find_elements_localizations_it(self):
         # find localizations locator & click
@@ -961,11 +949,3 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
-
-
-
-
-
-
-
-
