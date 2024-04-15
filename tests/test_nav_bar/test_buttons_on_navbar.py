@@ -1,4 +1,4 @@
-from home_page.navbar.page_object import HomePage
+from home_page.page_objects.page_object import HomePage
 import pytest
 
 '''Why VPN test'''
@@ -13,7 +13,6 @@ def test_why_vpn_why_vpn_what_is_vpn(browser):
     assert popup.find_elements_why_vpn_wats_is_vpn(expected_title)
 
 
-
 @pytest.mark.why_vpn
 def test_pop_up_why_vpn_no_logs(browser):
     popup = HomePage(browser)
@@ -21,8 +20,6 @@ def test_pop_up_why_vpn_no_logs(browser):
     expected_title = 'Best no logs VPN - free vpn no logs - Planet VPN'
 
     assert popup.find_elements_why_vpn_no_logs(expected_title)
-
-
 
 
 @pytest.mark.why_vpn
@@ -33,15 +30,12 @@ def test_pop_up_why_vpn_what_is_proxy(browser):
     assert popup.find_elements_why_vpn_what_is_proxy(expected_title)
 
 
-
-
 @pytest.mark.why_vpn
 def test_pop_up_why_vpn_our_vpn_network(browser):
     popup = HomePage(browser)
     popup.go_to()
     expected_title = 'VPN servers - list of free vpn servers around the world - Planet VPN'
     assert popup.find_elements_why_vpn_our_vpn_network(expected_title)
-
 
 
 @pytest.mark.why_vpn
@@ -52,6 +46,7 @@ def test_pop_up_why_vpn_about_vpn_protocols(browser):
 
     assert popup.find_elemets_why_vpn_about_vpn_protocols(expected_title)
 
+
 #
 #
 @pytest.mark.why_vpn
@@ -60,7 +55,6 @@ def test_pop_up_why_vpn_free_vpn(browser):
     popup.go_to()
     expected_title = 'Free VPN Download - For all Devices with no Limits | Planet VPN'
     assert popup.find_elements_why_vpn_free_vpn(expected_title)
-
 
 
 @pytest.mark.why_vpn
@@ -84,8 +78,6 @@ def test_pop_up_advantages_access_to_games_and_movies(browser):
     assert pop_up.find_elements_advantages_access_pop_up(expected_title)
 
 
-
-
 @pytest.mark.advantages
 def test_pop_up_advantages_steam(browser):
     pop_up = HomePage(browser)
@@ -93,8 +85,6 @@ def test_pop_up_advantages_steam(browser):
     expected_title = 'Free VPN for Steam - How to use a VPN to unlock Steam - Planet VPN'
 
     assert pop_up.find_elements_advantages_steam(expected_title)
-
-
 
 
 @pytest.mark.advantages
@@ -106,8 +96,6 @@ def test_pop_up_advantages_preventing_surveillance(browser):
     assert pop_up.find_elements_advantages_preventing_surveillance(expected_title)
 
 
-
-
 #
 @pytest.mark.advantages
 def test_pop_up_advantages_secure_wi_fi(browser):
@@ -116,8 +104,6 @@ def test_pop_up_advantages_secure_wi_fi(browser):
     expected_title = 'Free VPN for public WiFi - Secure Your Wi-Fi Connection - Planet VPN'
 
     assert pop_up.find_elements_advantages_secure_wi_fi(expected_title)
-
-
 
 
 #
@@ -131,8 +117,6 @@ def test_pop_up_advantages_streaming(browser):
     assert popup.find_elements_advantages_streaming(expected_title)
 
 
-
-
 @pytest.mark.advantages
 def test_pop_up_advantages_airline_tickets(browser):
     popup = HomePage(browser)
@@ -140,8 +124,6 @@ def test_pop_up_advantages_airline_tickets(browser):
     expected_title = 'Save Money on Flights With a free VPN - Planet VPN'
 
     assert popup.find_elements_advantages_airline_tickets(expected_title)
-
-
 
 
 @pytest.mark.advantages
@@ -153,8 +135,6 @@ def test_pop_up_advantages_online_anonymity(browser):
     assert popup.find_elements_advantages_online_anonymity(expected_title)
 
 
-
-
 @pytest.mark.advantages
 def test_pop_up_advantages_data_encryption(browser):
     popup = HomePage(browser)
@@ -162,8 +142,6 @@ def test_pop_up_advantages_data_encryption(browser):
     expected_title = 'Data encryption with free VPN - Planet VPN'
 
     assert popup.find_elements_advantages_data_encryption(expected_title)
-
-
 
 
 @pytest.mark.advantages
@@ -175,8 +153,6 @@ def test_pop_up_advantages_music(browser):
     assert popup.find_elements_advantages_music(expected_title)
 
 
-
-
 @pytest.mark.advantages
 def test_pop_up_advantages_booking_hotels(browser):
     popup = HomePage(browser)
@@ -184,8 +160,6 @@ def test_pop_up_advantages_booking_hotels(browser):
     expected_title = 'Save on Hotels booking with free VPN - How to save money'
 
     assert popup.find_elements_advantages_booking_hotels(expected_title)
-
-
 
 
 @pytest.mark.advantages
@@ -197,8 +171,6 @@ def test_pop_up_advantages_change_or_hide_ip(browser):
     assert popup.find_elements_advantages_change_or_hid_ip(expected_title)
 
 
-
-
 @pytest.mark.advantages
 def test_pop_up_advantages_car_rentals(browser):
     popup = HomePage(browser)
@@ -208,8 +180,6 @@ def test_pop_up_advantages_car_rentals(browser):
     assert popup.find_elements_advantages_car_rentals(expected_title)
 
 
-
-
 @pytest.mark.advantages
 def test_pop_up_advantages_car_torrents(browser):
     popup = HomePage(browser)
@@ -217,8 +187,6 @@ def test_pop_up_advantages_car_torrents(browser):
     expected_title = 'Free P2P VPN - Download and Set Up VPN'
 
     assert popup.find_elements_advantages_torrents(expected_title)
-
-
 
 
 @pytest.mark.advantages
@@ -242,8 +210,6 @@ def test_pop_up_products_android(browser):
     assert popup.find_elements_products_android_pop_up(expected_title)
 
 
-
-
 @pytest.mark.products
 def test_pop_up_products_chrome(browser):
     popup = HomePage(browser)
@@ -251,8 +217,6 @@ def test_pop_up_products_chrome(browser):
     expected_title = 'Free VPN for Chrome - download vpn Chrome extension - Planet VPN'
 
     assert popup.find_elements_products_chrome_pop_up(expected_title)
-
-
 
 
 @pytest.mark.products
@@ -273,8 +237,6 @@ def test_pop_up_products_router(browser):
     assert popup.find_elements_products_router_pop_up(expected_title)
 
 
-
-
 @pytest.mark.products
 def test_pop_up_products_dns_leak_test(browser):
     popup = HomePage(browser)
@@ -282,8 +244,6 @@ def test_pop_up_products_dns_leak_test(browser):
     expected_title = 'DNS check - Online DNS propagation check - Planet VPN'
 
     assert popup.find_elements_dns_leak_pop_up(expected_title)
-
-
 
 
 @pytest.mark.products
@@ -295,8 +255,6 @@ def test_pop_up_products_ios(browser):
     assert popup.find_elements_products_ios_pop_up(expected_title)
 
 
-
-
 @pytest.mark.products
 def test_pop_up_products_firefox(browser):
     popup = HomePage(browser)
@@ -304,8 +262,6 @@ def test_pop_up_products_firefox(browser):
     expected_title = 'Free VPN for Firefox - download firefox vpn extension - Planet VPN'
 
     assert popup.find_elements_products_firefox_po_up(expected_title)
-
-
 
 
 @pytest.mark.products
@@ -317,8 +273,6 @@ def test_pop_up_products_macos(browser):
     assert popup.find_elements_products_macos_pop_up(expected_title)
 
 
-
-
 @pytest.mark.products
 def test_pop_up_products_open_vpn(browser):
     popup = HomePage(browser)
@@ -326,8 +280,6 @@ def test_pop_up_products_open_vpn(browser):
     expected_title = 'OpenVPN configurations - client configurations for Windows - Planet VPN'
 
     assert popup.find_elements_products_open_vpn_pop_up(expected_title)
-
-
 
 
 @pytest.mark.products
@@ -339,8 +291,6 @@ def test_pop_up_products_web_rtc(browser):
     assert popup.find_elements_products_web_rtc_pop_up(expected_title)
 
 
-
-
 @pytest.mark.products
 def test_pop_up_products_edge(browser):
     popup = HomePage(browser)
@@ -348,8 +298,6 @@ def test_pop_up_products_edge(browser):
     expected_title = 'Free VPN Edge - download extension for Edge - Planet VPN'
 
     assert popup.find_elements_products_edge(expected_title)
-
-
 
 
 @pytest.mark.products
@@ -361,8 +309,6 @@ def test_pop_up_products_linux(browser):
     assert popup.find_elements_products_linux(expected_title)
 
 
-
-
 @pytest.mark.products
 def test_pop_up_products_virus_scan(browser):
     popup = HomePage(browser)
@@ -370,8 +316,6 @@ def test_pop_up_products_virus_scan(browser):
     expected_title = 'Free virus scan - check for viruses by file or url - Planet VPN'
 
     assert popup.find_elements_products_virus_scan_pop_up(expected_title)
-
-
 
 
 @pytest.mark.products
@@ -383,8 +327,6 @@ def test_pop_up_products_opera(browser):
     assert popup.find_elements_products_opera_pop_up(expected_title)
 
 
-
-
 @pytest.mark.products
 def test_pop_up_products_what_is_my_ip(browser):
     popup = HomePage(browser)
@@ -392,8 +334,6 @@ def test_pop_up_products_what_is_my_ip(browser):
     expected_title = 'What is my IP? Check my IP online - Planet VPN'
 
     assert popup.find_elements_products_what_is_my_ip_pop_up(expected_title)
-
-
 
 
 @pytest.mark.products
@@ -405,8 +345,6 @@ def test_pop_up_products_yandex(browser):
     assert popup.find_elements_product_yandex_pop_up(expected_title)
 
 
-
-
 @pytest.mark.products
 def test_pop_up_products_password_generator(browser):
     popup = HomePage(browser)
@@ -414,8 +352,6 @@ def test_pop_up_products_password_generator(browser):
     expected_title = 'Password generator - random and strong password - Planet VPN'
 
     assert popup.find_elements_products_password_generator_pop_up(expected_title)
-
-
 
 
 @pytest.mark.products
@@ -439,8 +375,6 @@ def test_premium_button(browser):
     assert premium.find_elements_premium_button(expected_title)
 
 
-
-
 '''Planet vpn logo test'''
 
 
@@ -462,8 +396,6 @@ def test_download_button(browser):
     assert download_button.find_elements_download_vpn(expected_title)
 
 
-
-
 @pytest.mark.login
 def test_login_button(browser):
     login_button = HomePage(browser)
@@ -471,8 +403,6 @@ def test_login_button(browser):
     expected_title = 'Login'
 
     assert login_button.find_elements_login(expected_title)
-
-
 
 
 @pytest.mark.localizations
@@ -484,8 +414,6 @@ def test_localizations_button_pt(browser):
     assert localisations_button.find_elements_localizations_pt(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_ro(browser):
     localisations_button = HomePage(browser)
@@ -493,8 +421,6 @@ def test_localizations_button_ro(browser):
     expected_title = 'Free VPN - cel mai bun VPN online gratuit, rapid și sigur | Planet VPN'
 
     assert localisations_button.find_elements_localizations_ro(expected_title)
-
-
 
 
 @pytest.mark.localizations
@@ -506,8 +432,6 @@ def test_localizations_button_ru(browser):
     assert localisations_button.find_elements_localizations_ru(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_sv(browser):
     localisations_button = HomePage(browser)
@@ -515,8 +439,6 @@ def test_localizations_button_sv(browser):
     expected_title = 'Gratis VPN och proxy - gratis vpn utan annonser | Planet VPN'
 
     assert localisations_button.find_elements_localizations_sv(expected_title)
-
-
 
 
 @pytest.mark.localizations
@@ -528,8 +450,6 @@ def test_localizations_button_th(browser):
     assert localisations_button.find_elements_localizations_th(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_tl(browser):
     localisations_button = HomePage(browser)
@@ -537,8 +457,6 @@ def test_localizations_button_tl(browser):
     expected_title = 'Libreng VPN – pinakamahusay na libreng online na VPN, mabilis at secure | Planet VPN'
 
     assert localisations_button.find_elements_localizations_tl(expected_title)
-
-
 
 
 @pytest.mark.localizations
@@ -550,8 +468,6 @@ def test_localizations_button_tr(browser):
     assert localisations_button.find_elements_localizations_tr(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_ua(browser):
     localisations_button = HomePage(browser)
@@ -559,8 +475,6 @@ def test_localizations_button_ua(browser):
     expected_title = 'VPN безкоштовно - без реєстрації, обмежень швидкості та трафіку | Planet VPN'
 
     assert localisations_button.find_elements_localizations_ua(expected_title)
-
-
 
 
 @pytest.mark.localizations
@@ -572,8 +486,6 @@ def test_localizations_button_ar(browser):
     assert localisations_button.find_elements_localizations_ar(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_cs(browser):
     localisations_button = HomePage(browser)
@@ -581,8 +493,6 @@ def test_localizations_button_cs(browser):
     expected_title = 'Zdarma VPN - nejlepší Free online VPN, rychlá a bezpečná | Planet VPN'
 
     assert localisations_button.find_elements_localizations_cs(expected_title)
-
-
 
 
 @pytest.mark.localizations
@@ -594,8 +504,6 @@ def test_localizations_button_de(browser):
     assert localisations_button.find_elements_localizations_de(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_en(browser):
     localisations_button = HomePage(browser)
@@ -603,8 +511,6 @@ def test_localizations_button_en(browser):
     expected_title = 'Free VPN – best free online VPN, fast and secure | Planet VPN'
 
     assert localisations_button.find_elements_localizations_en(expected_title)
-
-
 
 
 @pytest.mark.localizations
@@ -616,8 +522,6 @@ def test_localizations_button_es(browser):
     assert localisations_button.find_elements_localizations_es(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_fr(browser):
     localisations_button = HomePage(browser)
@@ -625,8 +529,6 @@ def test_localizations_button_fr(browser):
     expected_title = 'VPN gratuit - le meilleur free VPN sans limites | Planet VPN'
 
     assert localisations_button.find_elements_localizations_fr(expected_title)
-
-
 
 
 @pytest.mark.localizations
@@ -638,8 +540,6 @@ def test_localizations_button_id(browser):
     assert localisations_button.find_elements_localizations_id(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_it(browser):
     localisations_button = HomePage(browser)
@@ -649,8 +549,6 @@ def test_localizations_button_it(browser):
     assert localisations_button.find_elements_localizations_it(expected_title)
 
 
-
-
 @pytest.mark.localizations
 def test_localizations_button_pl(browser):
     localisations_button = HomePage(browser)
@@ -658,5 +556,3 @@ def test_localizations_button_pl(browser):
     expected_title = 'Darmowy VPN – najlepszy VPN online, szybki i bezpieczny | Planet VPN'
 
     assert localisations_button.find_elements_localizations_pl(expected_title)
-
-
