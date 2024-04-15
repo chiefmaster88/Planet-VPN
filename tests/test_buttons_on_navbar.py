@@ -430,3 +430,133 @@ def test_localizations_button_ru(browser):
     localisations = localisations_button.find_elements_localizations_ru()
 
     assert localisations.title == 'Бесплатный VPN - ВПН без лимитов и регистрации | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_sv(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_sv()
+
+    assert localisations.title == 'Gratis VPN och proxy - gratis vpn utan annonser | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_th(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_th()
+
+    assert localisations.title == 'Free VPN & พร็อกซี่ - ไม่มีโฆษณา จำกัด ความเร็วและการรับส่งข้อมูล | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_tl(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_tl()
+
+    assert localisations.title == 'Libreng VPN – pinakamahusay na libreng online na VPN, mabilis at secure | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_tr(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_tr()
+
+    assert localisations.title == 'Free VPN ve Proxy - reklamsız ve sınırsız en iyi ücretsiz vpn | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_ua(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_ua()
+
+    assert localisations.title == 'VPN безкоштовно - без реєстрації, обмежень швидкості та трафіку | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_ar(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_ar()
+
+    assert localisations.title == 'أفضل برنامج VPN مجاني بدون اعلانات وموثوق به من 10 مليون مستخدم'
+
+
+@pytest.mark.localizations
+def test_localizations_button_cs(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_cs()
+
+    assert localisations.title == 'Zdarma VPN - nejlepší Free online VPN, rychlá a bezpečná | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_de(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_de()
+
+    assert localisations.title == 'VPN Kostenlos – das beste Free VPN ohne Grenzen | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_en(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_en()
+
+    assert localisations.title == 'Free VPN – best free online VPN, fast and secure | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_es(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_es()
+
+    assert localisations.title == 'VPN Gratis y Proxy: Free VPN sin restricciones ni límites - Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_fr(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_fr()
+
+    assert localisations.title == 'VPN gratuit - le meilleur free VPN sans limites | Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_id(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_id()
+
+    assert localisations.title == 'VPN Gratis – VPN online gratis terbaik, cepat dan aman | VPN Planet'
+
+
+@pytest.mark.localizations
+def test_localizations_button_it(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_it()
+
+    assert localisations.title == 'VPN Gratis: la migliore VPN online Gratis, veloce e sicura - Planet VPN'
+
+
+@pytest.mark.localizations
+def test_localizations_button_pl(browser):
+    localisations_button = HomePage(browser)
+    localisations_button.go_to()
+    localisations = localisations_button.find_elements_localizations_pl()
+
+    assert localisations.title == 'Darmowy VPN – najlepszy VPN online, szybki i bezpieczny | Planet VPN'
+
+
+
+

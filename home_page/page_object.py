@@ -728,3 +728,244 @@ class HomePage:
 
         time.sleep(2)
         return self.driver
+
+
+    def find_elements_localizations_sv(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find sv locator & click
+        sv_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[13]')
+        sv_elements = wait.until(EC.visibility_of_element_located(sv_locator))
+        sv_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_th(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find th locator & click
+        th_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[14]')
+        th_elements = wait.until(EC.visibility_of_element_located(th_locator))
+        th_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_tl(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find tl locator & click
+        tl_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[15]')
+        tl_elements = wait.until(EC.visibility_of_element_located(tl_locator))
+        tl_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_tr(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find tr_ locator & click
+        tr_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[16]')
+        tr_elements = wait.until(EC.visibility_of_element_located(tr_locator))
+        tr_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_ua(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find ua locator & click
+        ua_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[17]')
+        ua_elements = wait.until(EC.visibility_of_element_located(ua_locator))
+        ua_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_ar(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find ar locator & click
+        ar_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[1]')
+        ar_elements = wait.until(EC.visibility_of_element_located(ar_locator))
+        ar_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_cs(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find cs locator & click
+        cs_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[2]')
+        cs_elements = wait.until(EC.visibility_of_element_located(cs_locator))
+        cs_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_de(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find de locator & click
+        de_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[3]')
+        de_elements = wait.until(EC.visibility_of_element_located(de_locator))
+        de_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+    def find_elements_localizations_en(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find de locator & click
+        de_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[3]')
+        de_elements = wait.until(EC.visibility_of_element_located(de_locator))
+        de_elements.click()
+
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find en locator & click
+        en_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[4]')
+        en_elements = wait.until(EC.visibility_of_element_located(en_locator))
+        en_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_es(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find es locator & click
+        es_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[5]')
+        es_elements = wait.until(EC.visibility_of_element_located(es_locator))
+        es_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_fr(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find fr_ locator & click
+        fr_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[6]')
+        fr_elements = wait.until(EC.visibility_of_element_located(fr_locator))
+        fr_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_id(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find id locator & click
+        id_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[7]')
+        id_elements = wait.until(EC.visibility_of_element_located(id_locator))
+        id_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+    def find_elements_localizations_it(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find it locator & click
+        it_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[8]')
+        it_elements = wait.until(EC.visibility_of_element_located(it_locator))
+        it_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+    def find_elements_localizations_pl(self):
+        # find localizations locator & click
+        wait = WebDriverWait(self.driver, 10)
+        localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
+        localisation_elements = wait.until(EC.visibility_of_element_located(localisation_locator))
+        localisation_elements.click()
+
+        # find pl locator & click
+        pl_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[9]')
+        pl_elements = wait.until(EC.visibility_of_element_located(pl_locator))
+        pl_elements.click()
+
+        time.sleep(2)
+        return self.driver
+
+
+
+
+
+
+
+
