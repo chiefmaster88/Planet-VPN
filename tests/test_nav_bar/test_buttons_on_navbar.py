@@ -434,9 +434,11 @@ def tes_pop_up_products_close(browser):
 def test_premium_button(browser):
     premium = HomePage(browser)
     premium.go_to()
-    premium_button = premium.find_elements_premium_button()
+    expected_title = 'Buy best VPN - buy a vpn service subscription - Planet VPN'
 
-    assert premium_button.title == 'Buy best VPN - buy a vpn service subscription - Planet VPN'
+    assert premium.find_elements_premium_button(expected_title)
+
+
 
 
 '''Planet vpn logo test'''
@@ -446,177 +448,215 @@ def test_premium_button(browser):
 def test_planet_vpn(browser):
     planet_vpn = HomePage(browser)
     planet_vpn.go_to()
-    planet_vpn_button = planet_vpn.find_elements_planet_vpn_logo()
+    expected_title = 'Free VPN – best free online VPN, fast and secure | Planet VPN'
 
-    assert planet_vpn_button.title == 'Free VPN – best free online VPN, fast and secure | Planet VPN'
+    assert planet_vpn.find_elements_planet_vpn_logo(expected_title)
 
 
 @pytest.mark.download
 def test_download_button(browser):
     download_button = HomePage(browser)
     download_button.go_to()
-    download = download_button.find_elements_download_vpn()
+    expected_title = 'Free VPN Download - For all Devices with no Limits | Planet VPN'
 
-    assert download.title == 'Free VPN Download - For all Devices with no Limits | Planet VPN'
+    assert download_button.find_elements_download_vpn(expected_title)
+
+
 
 
 @pytest.mark.login
 def test_login_button(browser):
     login_button = HomePage(browser)
     login_button.go_to()
-    login = login_button.find_elements_login()
+    expected_title = 'Login'
 
-    assert login.title == 'Login'
+    assert login_button.find_elements_login(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_pt(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_pt()
+    expected_title = 'Free VPN e proxy - VPN gratis sem anúncios ou limites | Planet VPN'
 
-    assert localisations.title == 'Free VPN e proxy - VPN gratis sem anúncios ou limites | Planet VPN'
+    assert localisations_button.find_elements_localizations_pt(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_ro(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_ro()
+    expected_title = 'Free VPN - cel mai bun VPN online gratuit, rapid și sigur | Planet VPN'
 
-    assert localisations.title == 'Free VPN - cel mai bun VPN online gratuit, rapid și sigur | Planet VPN'
+    assert localisations_button.find_elements_localizations_ro(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_ru(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_ru()
+    expected_title = 'Бесплатный VPN - ВПН без лимитов и регистрации | Planet VPN'
 
-    assert localisations.title == 'Бесплатный VPN - ВПН без лимитов и регистрации | Planet VPN'
+    assert localisations_button.find_elements_localizations_ru(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_sv(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_sv()
+    expected_title = 'Gratis VPN och proxy - gratis vpn utan annonser | Planet VPN'
 
-    assert localisations.title == 'Gratis VPN och proxy - gratis vpn utan annonser | Planet VPN'
+    assert localisations_button.find_elements_localizations_sv(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_th(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_th()
+    expected_title = 'Free VPN & พร็อกซี่ - ไม่มีโฆษณา จำกัด ความเร็วและการรับส่งข้อมูล | Planet VPN'
 
-    assert localisations.title == 'Free VPN & พร็อกซี่ - ไม่มีโฆษณา จำกัด ความเร็วและการรับส่งข้อมูล | Planet VPN'
+    assert localisations_button.find_elements_localizations_th(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_tl(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_tl()
+    expected_title = 'Libreng VPN – pinakamahusay na libreng online na VPN, mabilis at secure | Planet VPN'
 
-    assert localisations.title == 'Libreng VPN – pinakamahusay na libreng online na VPN, mabilis at secure | Planet VPN'
+    assert localisations_button.find_elements_localizations_tl(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_tr(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_tr()
+    expected_title = 'Free VPN ve Proxy - reklamsız ve sınırsız en iyi ücretsiz vpn | Planet VPN'
 
-    assert localisations.title == 'Free VPN ve Proxy - reklamsız ve sınırsız en iyi ücretsiz vpn | Planet VPN'
+    assert localisations_button.find_elements_localizations_tr(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_ua(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_ua()
+    expected_title = 'VPN безкоштовно - без реєстрації, обмежень швидкості та трафіку | Planet VPN'
 
-    assert localisations.title == 'VPN безкоштовно - без реєстрації, обмежень швидкості та трафіку | Planet VPN'
+    assert localisations_button.find_elements_localizations_ua(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_ar(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_ar()
+    expected_title = 'أفضل برنامج VPN مجاني بدون اعلانات وموثوق به من 10 مليون مستخدم'
 
-    assert localisations.title == 'أفضل برنامج VPN مجاني بدون اعلانات وموثوق به من 10 مليون مستخدم'
+    assert localisations_button.find_elements_localizations_ar(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_cs(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_cs()
+    expected_title = 'Zdarma VPN - nejlepší Free online VPN, rychlá a bezpečná | Planet VPN'
 
-    assert localisations.title == 'Zdarma VPN - nejlepší Free online VPN, rychlá a bezpečná | Planet VPN'
+    assert localisations_button.find_elements_localizations_cs(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_de(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_de()
+    expected_title = 'VPN Kostenlos – das beste Free VPN ohne Grenzen | Planet VPN'
 
-    assert localisations.title == 'VPN Kostenlos – das beste Free VPN ohne Grenzen | Planet VPN'
+    assert localisations_button.find_elements_localizations_de(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_en(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_en()
+    expected_title = 'Free VPN – best free online VPN, fast and secure | Planet VPN'
 
-    assert localisations.title == 'Free VPN – best free online VPN, fast and secure | Planet VPN'
+    assert localisations_button.find_elements_localizations_en(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_es(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_es()
+    expected_title = 'VPN Gratis y Proxy: Free VPN sin restricciones ni límites - Planet VPN'
 
-    assert localisations.title == 'VPN Gratis y Proxy: Free VPN sin restricciones ni límites - Planet VPN'
+    assert localisations_button.find_elements_localizations_es(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_fr(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_fr()
+    expected_title = 'VPN gratuit - le meilleur free VPN sans limites | Planet VPN'
 
-    assert localisations.title == 'VPN gratuit - le meilleur free VPN sans limites | Planet VPN'
+    assert localisations_button.find_elements_localizations_fr(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_id(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_id()
+    expected_title = 'VPN Gratis – VPN online gratis terbaik, cepat dan aman | VPN Planet'
 
-    assert localisations.title == 'VPN Gratis – VPN online gratis terbaik, cepat dan aman | VPN Planet'
+    assert localisations_button.find_elements_localizations_id(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_it(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_it()
+    expected_title = 'VPN Gratis: la migliore VPN online Gratis, veloce e sicura - Planet VPN'
 
-    assert localisations.title == 'VPN Gratis: la migliore VPN online Gratis, veloce e sicura - Planet VPN'
+    assert localisations_button.find_elements_localizations_it(expected_title)
+
+
 
 
 @pytest.mark.localizations
 def test_localizations_button_pl(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
-    localisations = localisations_button.find_elements_localizations_pl()
+    expected_title = 'Darmowy VPN – najlepszy VPN online, szybki i bezpieczny | Planet VPN'
 
-    assert localisations.title == 'Darmowy VPN – najlepszy VPN online, szybki i bezpieczny | Planet VPN'
+    assert localisations_button.find_elements_localizations_pl(expected_title)
+
+

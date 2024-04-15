@@ -746,17 +746,20 @@ class HomePage:
 
         return close_pop_up
 
-    def find_elements_premium_button(self):
+    def find_elements_premium_button(self, expected_title):
         # find premium button locator & click
         wait = WebDriverWait(self.driver, 10)
         premium_buttons_locator = (By.LINK_TEXT, 'Premium')
         premium_buttons_elements = wait.until(EC.visibility_of_element_located(premium_buttons_locator))
         premium_buttons_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_planet_vpn_logo(self):
+    def find_elements_planet_vpn_logo(self, expected_title):
         # find premium button locator & click
         wait = WebDriverWait(self.driver, 10)
         premium_buttons_locator = (By.LINK_TEXT, 'Premium')
@@ -769,30 +772,39 @@ class HomePage:
         planet_vpn_logo_elements = wait.until(EC.visibility_of_element_located(planet_vpn_logo_locator))
         planet_vpn_logo_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_download_vpn(self):
+    def find_elements_download_vpn(self, expected_title):
         # find download locator & click
         wait = WebDriverWait(self.driver, 10)
         download_locator = (By.LINK_TEXT, 'Download VPN')
         download_elements = wait.until(EC.visibility_of_element_located(download_locator))
         download_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_login(self):
+    def find_elements_login(self, expected_title):
         # find login locator & click
         wait = WebDriverWait(self.driver, 10)
         login_locator = (By.LINK_TEXT, 'Login')
         login_elements = wait.until(EC.visibility_of_element_located(login_locator))
         login_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_pt(self):
+    def find_elements_localizations_pt(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -804,10 +816,13 @@ class HomePage:
         pt_elements = wait.until(EC.visibility_of_element_located(pt_locator))
         pt_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_ro(self):
+    def find_elements_localizations_ro(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -819,10 +834,13 @@ class HomePage:
         ro_elements = wait.until(EC.visibility_of_element_located(ro_locator))
         ro_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_ru(self):
+    def find_elements_localizations_ru(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -834,10 +852,13 @@ class HomePage:
         ru_elements = wait.until(EC.visibility_of_element_located(ru_locator))
         ru_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_sv(self):
+    def find_elements_localizations_sv(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -849,10 +870,13 @@ class HomePage:
         sv_elements = wait.until(EC.visibility_of_element_located(sv_locator))
         sv_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_th(self):
+    def find_elements_localizations_th(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -864,10 +888,13 @@ class HomePage:
         th_elements = wait.until(EC.visibility_of_element_located(th_locator))
         th_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_tl(self):
+    def find_elements_localizations_tl(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -879,10 +906,13 @@ class HomePage:
         tl_elements = wait.until(EC.visibility_of_element_located(tl_locator))
         tl_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_tr(self):
+    def find_elements_localizations_tr(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -894,10 +924,13 @@ class HomePage:
         tr_elements = wait.until(EC.visibility_of_element_located(tr_locator))
         tr_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_ua(self):
+    def find_elements_localizations_ua(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -909,10 +942,13 @@ class HomePage:
         ua_elements = wait.until(EC.visibility_of_element_located(ua_locator))
         ua_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_ar(self):
+    def find_elements_localizations_ar(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -924,10 +960,13 @@ class HomePage:
         ar_elements = wait.until(EC.visibility_of_element_located(ar_locator))
         ar_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_cs(self):
+    def find_elements_localizations_cs(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -939,10 +978,13 @@ class HomePage:
         cs_elements = wait.until(EC.visibility_of_element_located(cs_locator))
         cs_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_de(self):
+    def find_elements_localizations_de(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -954,10 +996,13 @@ class HomePage:
         de_elements = wait.until(EC.visibility_of_element_located(de_locator))
         de_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_en(self):
+    def find_elements_localizations_en(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -980,10 +1025,13 @@ class HomePage:
         en_elements = wait.until(EC.visibility_of_element_located(en_locator))
         en_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_es(self):
+    def find_elements_localizations_es(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -995,10 +1043,13 @@ class HomePage:
         es_elements = wait.until(EC.visibility_of_element_located(es_locator))
         es_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_fr(self):
+    def find_elements_localizations_fr(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -1010,10 +1061,13 @@ class HomePage:
         fr_elements = wait.until(EC.visibility_of_element_located(fr_locator))
         fr_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_id(self):
+    def find_elements_localizations_id(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -1025,10 +1079,13 @@ class HomePage:
         id_elements = wait.until(EC.visibility_of_element_located(id_locator))
         id_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_it(self):
+    def find_elements_localizations_it(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -1040,10 +1097,13 @@ class HomePage:
         it_elements = wait.until(EC.visibility_of_element_located(it_locator))
         it_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_localizations_pl(self):
+    def find_elements_localizations_pl(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
         localisation_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
@@ -1055,5 +1115,8 @@ class HomePage:
         pl_elements = wait.until(EC.visibility_of_element_located(pl_locator))
         pl_elements.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
