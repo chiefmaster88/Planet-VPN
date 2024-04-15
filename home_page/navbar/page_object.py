@@ -12,7 +12,7 @@ class HomePage:
     def go_to(self):
         pass
 
-    def find_elements_why_vpn_wats_is_vpn(self):
+    def find_elements_why_vpn_wats_is_vpn(self, expected_title):
         # find why_vpn_locator & click
         wait = WebDriverWait(self.driver, 10)
         why_vpn_locator = (By.CSS_SELECTOR,
@@ -25,10 +25,14 @@ class HomePage:
         what_is_vpn_element = wait.until(EC.visibility_of_element_located(what_is_vpn_locator))
         what_is_vpn_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_why_vpn_no_logs(self):
+
+    def find_elements_why_vpn_no_logs(self, expected_title):
         # find why_vpn_locator & click
         wait = WebDriverWait(self.driver, 10)
         why_vpn_locator = (By.CSS_SELECTOR,
@@ -41,10 +45,13 @@ class HomePage:
         no_logs_element = wait.until(EC.visibility_of_element_located(no_logs_locator))
         no_logs_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_why_vpn_what_is_proxy(self):
+    def find_elements_why_vpn_what_is_proxy(self, expected_title):
         # find why_vpn_locator & click
         wait = WebDriverWait(self.driver, 10)
         why_vpn_locator = (By.CSS_SELECTOR,
@@ -57,10 +64,13 @@ class HomePage:
         what_is_proxy_element = wait.until(EC.visibility_of_element_located(what_is_proxy_locator))
         what_is_proxy_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_why_vpn_our_vpn_network(self):
+    def find_elements_why_vpn_our_vpn_network(self, expected_title):
         # find why_vpn_locator & click
         wait = WebDriverWait(self.driver, 10)
         why_vpn_locator = (By.CSS_SELECTOR,
@@ -73,10 +83,13 @@ class HomePage:
         our_vpn_network_element = wait.until(EC.visibility_of_element_located(our_vpn_network_locator))
         our_vpn_network_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elemets_why_vpn_about_vpn_protocols(self):
+    def find_elemets_why_vpn_about_vpn_protocols(self, expected_title):
         # find why_vpn_locator & click
         wait = WebDriverWait(self.driver, 10)
         why_vpn_locator = (By.CSS_SELECTOR,
@@ -89,10 +102,13 @@ class HomePage:
         about_vpn_element = wait.until(EC.presence_of_element_located(about_vpn_locator))
         about_vpn_element.click()
 
-        time.sleep(2)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
-    def find_elements_why_vpn_free_vpn(self):
+    def find_elements_why_vpn_free_vpn(self, expected_title):
         # find why_vpn_locator & click
         wait = WebDriverWait(self.driver, 10)
         why_vpn_locator = (By.CSS_SELECTOR,
@@ -105,8 +121,11 @@ class HomePage:
         free_vpn_element = wait.until(EC.visibility_of_element_located(free_vpn_locator))
         free_vpn_element.click()
 
-        time.sleep(3)
-        return self.driver
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutError:
+            return False
 
     def find_elements_why_vpn_close_pop_up(self):
         # find why_vpn_locator & click

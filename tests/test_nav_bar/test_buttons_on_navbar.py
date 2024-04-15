@@ -1,6 +1,4 @@
-import time
-
-from home_page.page_object import HomePage
+from home_page.navbar.page_object import HomePage
 import pytest
 
 '''Why VPN test'''
@@ -10,54 +8,59 @@ import pytest
 def test_why_vpn_why_vpn_what_is_vpn(browser):
     popup = HomePage(browser)
     popup.go_to()
-    what_is_a_vpn = popup.find_elements_why_vpn_wats_is_vpn()
+    expected_title = 'What is a VPN and How to Use a VPN: A Comprehensive Guide'
 
-    assert what_is_a_vpn.title == 'What is a VPN and How to Use a VPN: A Comprehensive Guide'
+    assert popup.find_elements_why_vpn_wats_is_vpn(expected_title)
+
 
 
 @pytest.mark.why_vpn
 def test_pop_up_why_vpn_no_logs(browser):
     popup = HomePage(browser)
     popup.go_to()
-    no_logs = popup.find_elements_why_vpn_no_logs()
+    expected_title = 'Best no logs VPN - free vpn no logs - Planet VPN'
 
-    assert no_logs.title == 'Best no logs VPN - free vpn no logs - Planet VPN'
+    assert popup.find_elements_why_vpn_no_logs(expected_title)
+
+
 
 
 @pytest.mark.why_vpn
 def test_pop_up_why_vpn_what_is_proxy(browser):
     popup = HomePage(browser)
     popup.go_to()
-    what_is_proxy = popup.find_elements_why_vpn_what_is_proxy()
+    expected_title = 'Proxy Types: Features and All You Need to Know | Planet VPN'
+    assert popup.find_elements_why_vpn_what_is_proxy(expected_title)
 
-    assert what_is_proxy.title == 'Proxy Types: Features and All You Need to Know | Planet VPN'
+
 
 
 @pytest.mark.why_vpn
 def test_pop_up_why_vpn_our_vpn_network(browser):
     popup = HomePage(browser)
     popup.go_to()
-    our_vpn_network = popup.find_elements_why_vpn_our_vpn_network()
+    expected_title = 'VPN servers - list of free vpn servers around the world - Planet VPN'
+    assert popup.find_elements_why_vpn_our_vpn_network(expected_title)
 
-    assert our_vpn_network.title == 'VPN servers - list of free vpn servers around the world - Planet VPN'
 
 
 @pytest.mark.why_vpn
 def test_pop_up_why_vpn_about_vpn_protocols(browser):
     popup = HomePage(browser)
     popup.go_to()
-    about_vpn_protocols = popup.find_elemets_why_vpn_about_vpn_protocols()
+    expected_title = 'VPN Protocols: Everything You Need To Know | Planet VPN'
 
-    assert about_vpn_protocols.title == 'VPN Protocols: Everything You Need To Know | Planet VPN'
+    assert popup.find_elemets_why_vpn_about_vpn_protocols(expected_title)
 
-
+#
+#
 @pytest.mark.why_vpn
 def test_pop_up_why_vpn_free_vpn(browser):
     popup = HomePage(browser)
     popup.go_to()
-    free_vpn = popup.find_elements_why_vpn_free_vpn()
+    expected_title = 'Free VPN Download - For all Devices with no Limits | Planet VPN'
+    assert popup.find_elements_why_vpn_free_vpn(expected_title)
 
-    assert free_vpn.title == 'Free VPN Download - For all Devices with no Limits | Planet VPN', "Free VPN  error"
 
 
 @pytest.mark.why_vpn
