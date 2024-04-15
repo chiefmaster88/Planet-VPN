@@ -1,4 +1,4 @@
-from home_page.page_objects.page_object import HomePage
+from home_page.page_objects.nav_bar_page_objects import HomePage
 import pytest
 
 '''Why VPN test'''
