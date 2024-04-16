@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options
 
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='module')
 def browser():
     driver = webdriver.Chrome()
     base_url = 'https://freevpnplanet.com'

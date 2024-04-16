@@ -32,6 +32,7 @@ class HomePage:
             return False
 
 
+
     def find_elements_why_vpn_no_logs(self, expected_title):
         # find why_vpn_locator & click
         wait = WebDriverWait(self.driver, 10)
