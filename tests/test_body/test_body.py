@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 
-@pytest.mark.downloads
+@pytest.mark.browsers_os
 def test_os_browsers_links(browser):
     links = HomePageBody(browser)
     links.go_to()
