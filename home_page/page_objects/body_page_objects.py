@@ -16,7 +16,7 @@ class HomePageBody:
     def go_to(self):
         self.driver.get(HomePageBody.url)
 
-    def find_os_and_browsers_links(self, expected_title):
+    def find_body_links_and_buttons(self, expected_title):
         # find cookies & close
         wait = WebDriverWait(self.driver, 10)
         cookies_locator = (By.CLASS_NAME, 'cookies__btn')
@@ -33,25 +33,6 @@ class HomePageBody:
             wait.until(EC.title_is(expected_title))
             return True
         except TimeoutException:
-            return False
-
-    def find_devices_links(self, expected_title):
-        # find cookies & close
-        wait = WebDriverWait(self.driver, 10)
-        cookies_locator = (By.CLASS_NAME, 'cookies__btn')
-        cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
-        cookies_element.click()
-
-        # find android locator & click
-        android_locator = (By.CSS_SELECTOR,
-                           '#__layout > div > div:nth-child(1) > main > div:nth-child(4) > div > section > div.home-platforms > div.home-platforms__cards > div.home-platforms__card.mobile > div.home-platforms__links > a:nth-child(1)')
-        android_element = wait.until(EC.element_to_be_clickable(android_locator))
-        android_element.click()
-
-        try:
-            wait.until(EC.title_is(expected_title))
-            return True
-        except TimeoutError:
             return False
 
     def go_back(self):

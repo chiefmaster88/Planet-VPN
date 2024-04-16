@@ -6,13 +6,12 @@ from selenium.webdriver.common.by import By
 
 
 @pytest.mark.browsers_os
-def test_os_browsers_links(browser):
+def test_os_body_links_and_buttons(browser):
     links = HomePageBody(browser)
     links.go_to()
     expected_title = 'Free VPN for Android - download best fast and safe VPN - Planet VPN'
 
-    assert links.find_os_and_browsers_links(expected_title), 'Expected OS and browser'
-
+    assert links.find_body_links_and_buttons(expected_title), 'Expected OS and browser'
 
     other_links_and_titles = [
         {'locator': (By.CSS_SELECTOR,
@@ -51,31 +50,6 @@ def test_os_browsers_links(browser):
         {'locator': (By.CSS_SELECTOR,
                      '#__layout > div > div:nth-child(1) > main > header > div.page-section.light > div > div > div > a:nth-child(13)'),
          'expected_title': 'OpenVPN configurations - client configurations for Windows - Planet VPN'},
-
-    ]
-
-    for link_data in other_links_and_titles:
-        wait = WebDriverWait(browser, 10)
-        link_element = wait.until(EC.element_to_be_clickable(link_data['locator']))
-        link_element.click()
-
-        assert wait.until(EC.title_is(
-            link_data['expected_title'])), f"Expected title {link_data['expected_title']} but got {browser.title}"
-
-        links.go_back()
-
-
-
-@pytest.mark.devices_os
-def test_any_device_links(browser):
-    links = HomePageBody(browser)
-    links.go_to()
-    expected_title = 'Free VPN for Android - download best fast and safe VPN - Planet VPN'
-
-    assert links.find_devices_links(expected_title), 'Expected OS and browser'
-    links.go_back()
-
-    other_links_and_titles = [
         {'locator': (By.CSS_SELECTOR,
                      '#__layout > div > div:nth-child(1) > main > div:nth-child(4) > div > section > div.home-platforms > div.home-platforms__cards > div.home-platforms__card.mobile > div.home-platforms__links > a:nth-child(2)'),
          'expected_title': 'Free VPN iOS - VPN for iPhone and iPad without limits - Planet VPN'},
@@ -101,7 +75,12 @@ def test_any_device_links(browser):
         {'locator': (By.CSS_SELECTOR,
                      '#__layout > div > div:nth-child(1) > main > div:nth-child(4) > div > section > div.home-platforms > div.home-platforms__cards > div.home-platforms__card.browser > div.home-platforms__links > a:nth-child(5)'),
          'expected_title': 'Free VPN for Yandex Browser - vpn extension - Planet VPN'},
-
+        {'locator': (By.CSS_SELECTOR,
+                     '#__layout > div > div:nth-child(1) > main > div.home-network > div > div > section > div.home-network__route > a'),
+         'expected_title': 'VPN servers - list of free vpn servers around the world - Planet VPN'},
+        {'locator': (By.LINK_TEXT,
+                     'Get all the benefits'),
+         'expected_title': 'Buy best VPN - buy a vpn service subscription - Planet VPN'}
 
     ]
 
@@ -109,7 +88,6 @@ def test_any_device_links(browser):
         wait = WebDriverWait(browser, 10)
         link_element = wait.until(EC.element_to_be_clickable(link_data['locator']))
         link_element.click()
-
 
         assert wait.until(EC.title_is(
             link_data['expected_title'])), f"Expected title {link_data['expected_title']} but got {browser.title}"
