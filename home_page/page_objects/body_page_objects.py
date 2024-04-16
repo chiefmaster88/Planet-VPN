@@ -1,10 +1,11 @@
+import os
 import time
 
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
+
 
 class HomePageBody:
     url = 'https://freevpnplanet.com/'
@@ -16,13 +17,34 @@ class HomePageBody:
         self.driver.get(HomePageBody.url)
 
     def find_os_and_browsers_links(self, expected_title):
+        # find cookies & close
         wait = WebDriverWait(self.driver, 10)
-
         cookies_locator = (By.CLASS_NAME, 'cookies__btn')
         cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
         cookies_element.click()
 
-        android_locator = (By.CSS_SELECTOR, '#__layout > div > div:nth-child(1) > main > header > div.page-section.light > div > div > div > a:nth-child(1)')
+        # find android locator & click
+        android_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > main > header > div.page-section.light > div > div > div > a:nth-child(1)')
+        android_element = wait.until(EC.element_to_be_clickable(android_locator))
+        android_element.click()
+
+        try:
+            wait.until(EC.title_is(expected_title))
+            return True
+        except TimeoutException:
+            return False
+
+    def find_devices_links(self, expected_title):
+        # find cookies & close
+        wait = WebDriverWait(self.driver, 10)
+        cookies_locator = (By.CLASS_NAME, 'cookies__btn')
+        cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
+        cookies_element.click()
+
+        # find android locator & click
+        android_locator = (By.CSS_SELECTOR,
+                           '#__layout > div > div:nth-child(1) > main > div:nth-child(4) > div > section > div.home-platforms > div.home-platforms__cards > div.home-platforms__card.mobile > div.home-platforms__links > a:nth-child(1)')
         android_element = wait.until(EC.element_to_be_clickable(android_locator))
         android_element.click()
 
@@ -34,3 +56,26 @@ class HomePageBody:
 
     def go_back(self):
         self.driver.get(HomePageBody.url)
+
+
+class DownloadPage:
+
+    def __init__(self, driver, download_directory):
+        self.driver = driver
+        self.download_directory = download_directory
+
+    def go_to_download(self, url):
+        self.driver.get(url)
+
+    def download_file(self, expected_filename):
+        wait = WebDriverWait(self.driver, 10)
+        download_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/main/header/div[1]/div/div/div[2]/a')
+        download_element = wait.until(EC.element_to_be_clickable(download_locator))
+        download_element.click()
+
+        file_path = os.path.join(self.download_directory, expected_filename)
+
+        wait = WebDriverWait(self.driver, 500)
+        wait.until(lambda driver: os.path.exists(file_path))
+
+        return file_path
