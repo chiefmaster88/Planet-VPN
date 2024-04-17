@@ -19,9 +19,9 @@ class HomePageBody:
     def find_body_links_and_buttons(self, expected_title):
         # find cookies & close
         wait = WebDriverWait(self.driver, 10)
-        # cookies_locator = (By.CLASS_NAME, 'cookies__btn')
-        # cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
-        # cookies_element.click()
+        cookies_locator = (By.CLASS_NAME, 'cookies__btn')
+        cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
+        cookies_element.click()
 
         # find android locator & click
         android_locator = (By.CSS_SELECTOR,

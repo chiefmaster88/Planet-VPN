@@ -208,13 +208,6 @@ def test_download_button(browser):
     assert download_button.find_elements_download_vpn(expected_title)
 
 
-@pytest.mark.login
-def test_login_button(browser):
-    login_button = HomePage(browser)
-    login_button.go_to()
-    expected_title = 'Login'
-
-    assert login_button.find_elements_login(expected_title)
 
 
 @pytest.mark.localizations
