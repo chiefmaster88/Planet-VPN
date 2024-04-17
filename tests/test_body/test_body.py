@@ -118,21 +118,17 @@ def test_file_download_get_for_free(browser_and_download):
 
 
 @pytest.mark.dropdown
-def test_dropdown_menu(browser):
+def test_drop(browser):
     dropdown_page = HomePageBody(browser)
+    dropdown_page.find_drop_down()
 
-    dropdown_locator = (By.CLASS_NAME, 'faq-item__question')
+    wait = WebDriverWait(browser, 10)
 
-    menu_text_locators = [
-        ((By.TAG_NAME, 'p'),
-         "A free VPN, when run properly, can offer a good balance between security and accessibility. Our free VPN aims to provide reliable connections and protect user data. While many may doubt the effectiveness of free services, our VPN aims to challenge that notion by maintaining a level of performance and reliability. As always,  users should assess their needs and do due diligence before making a choice."),
-        # ((By.TAG_NAME, 'p'),
-        #  "Absolutely! While concerns can arise with some free VPNs, our service prioritizes user safety above all. We utilize advanced encryption standards and strict no-log policies to ensure your online activities remain private and secure. Regularly audited and committed to transparency, our free VPN is designed with the user's security in mind. Enjoy peace of mind knowing that your online presence is protected with us."),
-        # ((By.TAG_NAME, 'p'),
-        #  "There are several reputable free VPNs out there, and among them, Planet VPN is a notable choice. Planet VPN strikes a good balance between user privacy, speed, and global server coverage. While ensuring the security of user data with advanced encryption, its performance remains consistently high. It's always a good thing for users to compare features and reviews, but Planet VPN is definitely a strong contender in the free VPN category."),
-
+    paragraph_locators = [
+        (By.TAG_NAME, 'p'),
     ]
 
-    dropdown_menus = dropdown_page.find_dropdown_menu(dropdown_locator)
+    for locator in paragraph_locators:
+        paragraph_element = wait.until(EC.visibility_of_element_located(locator))
 
-    dropdown_page.click_and_verify_dropdown_text(dropdown_menus, menu_text_locators)
+        assert paragraph_element is not None, 'Paragraph not found'

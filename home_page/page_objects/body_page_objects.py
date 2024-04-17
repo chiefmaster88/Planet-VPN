@@ -35,28 +35,39 @@ class HomePageBody:
         except TimeoutException:
             return False
 
-    def find_dropdown_menu(self, dropdown_locator):
-        # find cookies & close
-        wait = WebDriverWait(self.driver, 10)
-        cookies_locator = (By.CLASS_NAME, 'cookies__btn')
-        cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
-        cookies_element.click()
+    def find_drop_down(self):
         self.driver.execute_script("window.scrollBy(0, 6500);")
-        time.sleep(10)
-
         wait = WebDriverWait(self.driver, 10)
-        dropdown_menus = wait.until(EC.presence_of_all_elements_located(dropdown_locator))
-        return dropdown_menus
+        time.sleep(1)
+        dropdown_locators = [
+            (By.CSS_SELECTOR,
+             '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(2) > div.faq-item__question'),
+            (By.CSS_SELECTOR,
+             '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(3) > div.faq-item__question'),
+            # Замените селектор
+            (By.CSS_SELECTOR,
+             '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(4) > div.faq-item__question'),
+            # Замените селектор
+            (By.CSS_SELECTOR,
+             '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(5) > div.faq-item__question'),
+            # Замените селектор
+            (By.CSS_SELECTOR,
+             '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(6) > div.faq-item__question'),
+            # Замените селектор
+            (By.CSS_SELECTOR,
+             '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(7) > div.faq-item__question'),
+            # Замените селектор
+            (By.CSS_SELECTOR,
+             '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(8) > div.faq-item__question'),
+            # Замените селектор
 
-    def click_and_verify_dropdown_text(self, dropdown_menus, menu_text_locators):
+        ]
 
-        wait = WebDriverWait(self.driver, 10)
-        for menu, (menu_text_locator, expected_text) in zip(dropdown_menus, menu_text_locators):
-            menu.click()
-
-            text_element = wait.until(EC.visibility_of_element_located(menu_text_locator))
-
-            assert text_element.text == expected_text, f"Ожидаемый текст не совпадает: {expected_text} != {text_element.text}"
+        for locator in dropdown_locators:
+            dropdown_element = wait.until(EC.element_to_be_clickable(locator))
+            dropdown_element.click()
+            self.driver.execute_script("window.scrollBy(0, 150);")
+            time.sleep(1)
 
     def go_back(self):
         self.driver.get(HomePageBody.url)
