@@ -1,5 +1,3 @@
-import time
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,7 +8,7 @@ import pytest
 
 
 @pytest.mark.navbar_links
-def test_why_vpn_why_vpn_what_is_vpn(browser):
+def test_why_vpn(browser):
     popup = HomePage(browser)
     popup.go_to()
     expected_title = 'Free VPN – best free online VPN, fast and secure | Planet VPN'
@@ -58,7 +56,7 @@ def test_pop_up_advantages_close_pop_up(browser):
 
 
 @pytest.mark.navbar_links
-def test_pop_up_advantages_access_to_games_and_movies(browser):
+def test_pop_up_advantages(browser):
     popup = HomePage(browser)
     popup.go_to()
     expected_title = 'Free VPN – best free online VPN, fast and secure | Planet VPN'
@@ -111,7 +109,7 @@ def test_pop_up_advantages_access_to_games_and_movies(browser):
 
 
 @pytest.mark.navbar_links
-def test_pop_up_products_android(browser):
+def test_pop_up_products(browser):
     popup = HomePage(browser)
     popup.go_to()
     expected_title = 'Free VPN – best free online VPN, fast and secure | Planet VPN'
@@ -169,7 +167,7 @@ def test_pop_up_products_android(browser):
         popup.find_products_button_and_click()
 
 
-'''Premium button & login & logo test'''
+'''Premium button & login,logo, Download VPN test'''
 
 
 @pytest.mark.navbar_links
@@ -187,6 +185,9 @@ def test_premium_button(browser):
         {'locator': (By.CSS_SELECTOR,
                      '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__controls > div.header-cabinet > div.header-cabinet__button > a'),
          'expected_title': 'Login'},
+        {'locator': (By.CSS_SELECTOR,
+                     '#__layout > div > main > div.page-header > div.page-section.transparent.full-height > div > div > div.page-header__controls > a'),
+         'expected_title': 'Free VPN Download - For all Devices with no Limits | Planet VPN'},
 
     ]
 
