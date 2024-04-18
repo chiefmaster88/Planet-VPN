@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -5,7 +7,6 @@ from home_page.page_objects.nav_bar_page_objects import HomePage
 import pytest
 
 '''Why VPN test'''
-
 
 
 @pytest.mark.navbar_links
@@ -50,9 +51,7 @@ def test_pop_up_advantages_close_pop_up(browser):
     popup.go_to()
     close_pop_up = popup.find_element_close_pop_up()
 
-
     assert close_pop_up, 'Pop-up did not close successfully'
-
 
 
 '''Advantages button test'''
@@ -106,8 +105,6 @@ def test_pop_up_advantages_access_to_games_and_movies(browser):
 
         popup.go_back()
         popup.find_advantages_button_and_click()
-
-
 
 
 '''Products button test'''
@@ -184,9 +181,11 @@ def test_premium_button(browser):
     assert premium.find_elements_premium_and_login_and_logo_buttons(expected_title)
 
     other_links_and_titles = [
-        {'locator': (By.CSS_SELECTOR, '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__logo > a > img'),
+        {'locator': (By.CSS_SELECTOR,
+                     '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__nav > div.page-header__logo > a > img'),
          'expected_title': 'Free VPN – best free online VPN, fast and secure | Planet VPN'},
-        {'locator': (By.CSS_SELECTOR, '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__controls > div.header-cabinet > div.header-cabinet__button > a'),
+        {'locator': (By.CSS_SELECTOR,
+                     '#__layout > div > div:nth-child(1) > div > div.page-section.transparent.full-height > div > div > div.page-header__controls > div.header-cabinet > div.header-cabinet__button > a'),
          'expected_title': 'Login'},
 
     ]
@@ -208,156 +207,56 @@ def test_download_button(browser):
     assert download_button.find_elements_download_vpn(expected_title)
 
 
-
-
-@pytest.mark.localizations
+@pytest.mark.navbar_links
 def test_localizations_button_pt(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Free VPN e proxy - VPN gratis sem anúncios ou limites | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_pt(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_ro(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Free VPN - cel mai bun VPN online gratuit, rapid și sigur | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_ro(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_ru(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Бесплатный VPN - ВПН без лимитов и регистрации | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_ru(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_sv(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Gratis VPN och proxy - gratis vpn utan annonser | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_sv(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_th(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Free VPN & พร็อกซี่ - ไม่มีโฆษณา จำกัด ความเร็วและการรับส่งข้อมูล | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_th(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_tl(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Libreng VPN – pinakamahusay na libreng online na VPN, mabilis at secure | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_tl(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_tr(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Free VPN ve Proxy - reklamsız ve sınırsız en iyi ücretsiz vpn | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_tr(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_ua(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'VPN безкоштовно - без реєстрації, обмежень швидкості та трафіку | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_ua(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_ar(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'أفضل برنامج VPN مجاني بدون اعلانات وموثوق به من 10 مليون مستخدم'
-
-    assert localisations_button.find_elements_localizations_ar(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_cs(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Zdarma VPN - nejlepší Free online VPN, rychlá a bezpečná | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_cs(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_de(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'VPN Kostenlos – das beste Free VPN ohne Grenzen | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_de(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_en(browser):
     localisations_button = HomePage(browser)
     localisations_button.go_to()
     expected_title = 'Free VPN – best free online VPN, fast and secure | Planet VPN'
 
-    assert localisations_button.find_elements_localizations_en(expected_title)
+    assert localisations_button.find_elements_localizations_pt(expected_title)
 
+    other_links_and_titles = [
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[10]'),
+         'expected_title': 'Free VPN e proxy - VPN gratis sem anúncios ou limites | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[1]'),
+         'expected_title': 'أفضل برنامج VPN مجاني بدون اعلانات وموثوق به من 10 مليون مستخدم'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[2]'),
+         'expected_title': 'Zdarma VPN - nejlepší Free online VPN, rychlá a bezpečná | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[3]'),
+         'expected_title': 'VPN Kostenlos – das beste Free VPN ohne Grenzen | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[4]'),
+         'expected_title': 'Free VPN – best free online VPN, fast and secure | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[5]'),
+         'expected_title': 'VPN Gratis y Proxy: Free VPN sin restricciones ni límites - Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[6]'),
+         'expected_title': 'VPN gratuit - le meilleur free VPN sans limites | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[7]'),
+         'expected_title': 'VPN Gratis – VPN online gratis terbaik, cepat dan aman | VPN Planet'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[8]'),
+         'expected_title': 'VPN Gratis: la migliore VPN online Gratis, veloce e sicura - Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[9]'),
+         'expected_title': 'Darmowy VPN – najlepszy VPN online, szybki i bezpieczny | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[11]'),
+         'expected_title': 'Free VPN - cel mai bun VPN online gratuit, rapid și sigur | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[12]'),
+         'expected_title': 'Бесплатный VPN - ВПН без лимитов и регистрации | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[13]'),
+         'expected_title': 'Gratis VPN och proxy - gratis vpn utan annonser | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[14]'),
+         'expected_title': 'Free VPN & พร็อกซี่ - ไม่มีโฆษณา จำกัด ความเร็วและการรับส่งข้อมูล | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[15]'),
+         'expected_title': 'Libreng VPN – pinakamahusay na libreng online na VPN, mabilis at secure | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[16]'),
+         'expected_title': 'Free VPN ve Proxy - reklamsız ve sınırsız en iyi ücretsiz vpn | Planet VPN'},
+        {'locator': (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[2]/div[17]'),
+         'expected_title': 'VPN безкоштовно - без реєстрації, обмежень швидкості та трафіку | Planet VPN'},
+    ]
 
-@pytest.mark.localizations
-def test_localizations_button_es(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'VPN Gratis y Proxy: Free VPN sin restricciones ni límites - Planet VPN'
+    for link_data in other_links_and_titles:
+        wait = WebDriverWait(browser, 10)
+        link_element = wait.until(EC.element_to_be_clickable(link_data['locator']))
+        link_element.click()
 
-    assert localisations_button.find_elements_localizations_es(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_fr(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'VPN gratuit - le meilleur free VPN sans limites | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_fr(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_id(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'VPN Gratis – VPN online gratis terbaik, cepat dan aman | VPN Planet'
-
-    assert localisations_button.find_elements_localizations_id(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_it(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'VPN Gratis: la migliore VPN online Gratis, veloce e sicura - Planet VPN'
-
-    assert localisations_button.find_elements_localizations_it(expected_title)
-
-
-@pytest.mark.localizations
-def test_localizations_button_pl(browser):
-    localisations_button = HomePage(browser)
-    localisations_button.go_to()
-    expected_title = 'Darmowy VPN – najlepszy VPN online, szybki i bezpieczny | Planet VPN'
-
-    assert localisations_button.find_elements_localizations_pl(expected_title)
+        assert wait.until(EC.title_is(link_data['expected_title']))
+        localisations_button.go_back()
+        localisations_button.find_english_element_and_click()
