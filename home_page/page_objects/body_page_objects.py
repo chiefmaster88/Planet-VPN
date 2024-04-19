@@ -43,22 +43,21 @@ class HomePageBody:
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(2) > div.faq-item__question'),
             (By.CSS_SELECTOR,
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(3) > div.faq-item__question'),
-            # Замените селектор
+
             (By.CSS_SELECTOR,
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(4) > div.faq-item__question'),
-            # Замените селектор
+
             (By.CSS_SELECTOR,
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(5) > div.faq-item__question'),
-            # Замените селектор
+
             (By.CSS_SELECTOR,
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(6) > div.faq-item__question'),
-            # Замените селектор
+
             (By.CSS_SELECTOR,
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(7) > div.faq-item__question'),
-            # Замените селектор
+
             (By.CSS_SELECTOR,
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(8) > div.faq-item__question'),
-
 
         ]
 
@@ -67,7 +66,6 @@ class HomePageBody:
             dropdown_element.click()
             time.sleep(1)
             self.driver.execute_script("window.scrollBy(0, 150);")
-
 
     def go_back(self):
         self.driver.get(HomePageBody.url)

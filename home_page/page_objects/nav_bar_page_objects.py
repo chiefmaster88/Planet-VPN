@@ -136,8 +136,6 @@ class HomePage:
         except TimeoutError:
             return False
 
-
-
     def find_elements_localizations_pt(self, expected_title):
         # find localizations locator & click
         wait = WebDriverWait(self.driver, 10)
@@ -156,4 +154,3 @@ class HomePage:
         english_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/div/div[1]/div/div/div[2]/div[1]/div[1]')
         english_elements = wait.until(EC.visibility_of_element_located(english_locator))
         english_elements.click()
-
