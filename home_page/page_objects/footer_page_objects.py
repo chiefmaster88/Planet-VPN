@@ -1,4 +1,6 @@
 import os
+import time
+
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -6,12 +8,16 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class FooterPageObjects:
+    url = 'https://freevpnplanet.com/'
 
     def __init__(self, browser):
         self.driver = browser
 
-    def go_to(self, url):
-        self.driver.get(url)
+    def go_to(self):
+        pass
+
+    def go_back(self):
+        self.driver.get(FooterPageObjects.url)
 
     def find_footer_links(self, expected_title):
         # self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -21,16 +27,40 @@ class FooterPageObjects:
         cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
         cookies_element.click()
 
-        google_locator = (By.XPATH, '//*[@id="__layout"]/div/div[1]/footer/div/div/div/div[2]/div/a[1]')
-        google_element = wait.until(EC.presence_of_element_located(google_locator))
-        google_element.click()
+        proxy_locator = (By.LINK_TEXT, 'What is Proxy')
+        proxy_element = wait.until(EC.element_to_be_clickable(proxy_locator))
+        proxy_element.click()
 
         try:
             wait.until(EC.title_is(expected_title))
             return True
-        except:
-            TimeoutException
-        return False
+        except TimeoutException:
+            return False
+
+    # def find_footer_pop_support(self):
+    #     self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    #
+    #     wait = WebDriverWait(self.driver, 10)
+    #     cookies_locator = (By.CLASS_NAME, 'cookies__btn')
+    #     cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
+    #     cookies_element.click()
+    #
+    #     support_locator = (By.LINK_TEXT, 'Support 24/7')
+    #     support_element = wait.until(EC.element_to_be_clickable(support_locator))
+    #     support_element.click()
+    #
+    # def find_footer_pop_up_chat(self):
+    #     self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    #
+    #     wait = WebDriverWait(self.driver, 10)
+    #     cookies_locator = (By.CLASS_NAME, 'cookies__btn')
+    #     cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
+    #     cookies_element.click()
+    #
+    #     chat_locator = (By.XPATH, '//*[@id="Embed"]/div/div/button')
+    #     chat_element = wait.until(EC.element_to_be_clickable(chat_locator))
+    #     chat_element.click()
+    #
 
 
 class FooterPageDownloads:

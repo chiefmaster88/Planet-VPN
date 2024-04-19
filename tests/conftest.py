@@ -10,7 +10,7 @@ def browser():
     driver = webdriver.Chrome(options=chrome_options)
     base_url = 'https://freevpnplanet.com'
     driver.get(base_url)
-    driver.maximize_window()
+    # driver.maximize_window()
     yield driver
 
     driver.quit()

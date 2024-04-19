@@ -38,7 +38,6 @@ class HomePageBody:
     def find_drop_down(self):
         self.driver.execute_script("window.scrollBy(0, 6500);")
         wait = WebDriverWait(self.driver, 10)
-        time.sleep(1)
         dropdown_locators = [
             (By.CSS_SELECTOR,
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(2) > div.faq-item__question'),
@@ -59,15 +58,16 @@ class HomePageBody:
             # Замените селектор
             (By.CSS_SELECTOR,
              '#__layout > div > div:nth-child(1) > main > div:nth-child(9) > div > div > article:nth-child(8) > div.faq-item__question'),
-            # Замените селектор
+
 
         ]
 
         for locator in dropdown_locators:
             dropdown_element = wait.until(EC.element_to_be_clickable(locator))
             dropdown_element.click()
-            self.driver.execute_script("window.scrollBy(0, 150);")
             time.sleep(1)
+            self.driver.execute_script("window.scrollBy(0, 150);")
+
 
     def go_back(self):
         self.driver.get(HomePageBody.url)

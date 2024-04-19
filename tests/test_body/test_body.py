@@ -87,8 +87,7 @@ def test_os_body_links_and_buttons(browser):
         link_element = wait.until(EC.element_to_be_clickable(link_data['locator']))
         link_element.click()
 
-        assert wait.until(EC.title_is(
-            link_data['expected_title'])), f"Expected title {link_data['expected_title']} but got {browser.title}"
+        assert wait.until(EC.title_is(link_data['expected_title']))
 
         links.go_back()
 
@@ -115,7 +114,7 @@ def test_file_download_get_for_free(browser_and_download):
     assert os.path.exists(file_path), f'Файл {expected_filename} не загружен в папку {download_directory}'
 
 
-@pytest.mark.dropdown
+@pytest.mark.body_dropdowns
 def test_drop(browser):
     dropdown_page = HomePageBody(browser)
     dropdown_page.find_drop_down()
@@ -128,5 +127,6 @@ def test_drop(browser):
 
     for locator in paragraph_locators:
         paragraph_element = wait.until(EC.visibility_of_element_located(locator))
+
 
         assert paragraph_element is not None, 'Paragraph not found'
