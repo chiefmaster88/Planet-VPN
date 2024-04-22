@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from home_page.page_objects.full_screen_page_objects import *
 
 @pytest.fixture(scope='function')
 def browser():
@@ -31,4 +31,14 @@ def browser_and_download():
     driver = webdriver.Chrome(options=chrome_options)
     yield driver, download_directory
 
+    driver.quit()
+
+
+@pytest.fixture(scope='function')
+def full_screen():
+    chrome_options = Options()
+    chrome_options.add_argument("--incognito")
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.maximize_window()
+    yield driver
     driver.quit()
