@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from home_page.page_objects.full_screen_page_objects import *
+
 
 @pytest.fixture(scope='function')
 def browser():
