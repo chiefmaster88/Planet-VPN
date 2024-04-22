@@ -39,6 +39,6 @@ def full_screen():
     chrome_options = Options()
     chrome_options.add_argument("--incognito")
     driver = webdriver.Chrome(options=chrome_options)
-    driver.maximize_window()
+    # driver.maximize_window()
     yield driver
     driver.quit()
