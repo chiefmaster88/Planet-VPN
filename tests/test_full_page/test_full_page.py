@@ -1,5 +1,5 @@
 import pytest
-from home_page.page_objects.full_screen_page_objects import *
+from home_page.page_objects.full_screen_page_objects import PageObject
 from PIL import Image
 
 
