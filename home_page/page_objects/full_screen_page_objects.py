@@ -1,6 +1,6 @@
 import os
 from selenium.webdriver.support.wait import WebDriverWait
-
+from selenium.webdriver.common.by import By
 
 class PageObject:
     def __init__(self, driver):
@@ -14,8 +14,11 @@ class PageObject:
 
         filepath = os.path.join(directory, filename)
 
-        width = self.driver.execute_script("return window.innerWidth")
+        width = self.driver.execute_script("return document.body.scrollWidth")
         height = self.driver.execute_script("return document.body.scrollHeight")
+        # s = lambda x: self.driver.execute_script('return document.body.parentNode.scroll' + x)
+        # self.driver.set_window_size(s('Width'), s('Height'))
+        # self.driver.find_element(By.TAG_NAME, 'body')
 
         self.driver.set_window_size(width, height)
 

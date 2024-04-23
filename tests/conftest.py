@@ -5,9 +5,14 @@ from selenium.webdriver.chrome.options import Options
 
 @pytest.fixture(scope='function')
 def browser():
-    chrome_options = Options()
-    chrome_options.add_argument("--incognito")
-    driver = webdriver.Chrome(options=chrome_options)
+    options = Options()
+
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument("--incognito")
+
+    driver = webdriver.Chrome(options=options)
     base_url = 'https://freevpnplanet.com'
     driver.get(base_url)
     # driver.maximize_window()
@@ -20,15 +25,19 @@ def browser():
 def browser_and_download():
     download_directory = '/Users/ivanhrytsyna/PycharmProjects/vpn_planet/downloads'
 
-    chrome_options = Options()
+    options = Options()
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument("--disable-blink-features=AutomationControlled")
+
     prefs = {
         "download.default_directory": download_directory,
         "download.prompt_for_download": False,
         "download.directory_upgrade": True,
         "safebrowsing.enabled": True
     }
-    chrome_options.add_experimental_option("prefs", prefs)
-    driver = webdriver.Chrome(options=chrome_options)
+    options.add_experimental_option("prefs", prefs)
+    driver = webdriver.Chrome(options=options)
     yield driver, download_directory
 
     driver.quit()
@@ -36,9 +45,14 @@ def browser_and_download():
 
 @pytest.fixture(scope='function')
 def full_screen():
-    chrome_options = Options()
-    chrome_options.add_argument("--incognito")
-    driver = webdriver.Chrome(options=chrome_options)
+    options = Options()
+    # options.add_argument("--headless")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument("--incognito")
+    driver = webdriver.Chrome(options=options)
+
     # driver.maximize_window()
     yield driver
     driver.quit()

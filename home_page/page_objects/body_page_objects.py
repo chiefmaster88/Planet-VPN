@@ -88,7 +88,7 @@ class DownloadPage:
 
         file_path = os.path.join(self.download_directory, expected_filename)
 
-        wait = WebDriverWait(self.driver, 500)
+        wait = WebDriverWait(self.driver, 180)
         wait.until(lambda driver: os.path.exists(file_path))
 
         return file_path
@@ -101,7 +101,7 @@ class DownloadPage:
 
         file_path = os.path.join(self.download_directory, expected_filename)
 
-        wait = WebDriverWait(self.driver, 500)
+        wait = WebDriverWait(self.driver, 180)
         wait.until(lambda driver: os.path.exists(file_path))
 
         return file_path
