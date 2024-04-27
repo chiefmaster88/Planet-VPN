@@ -37,30 +37,6 @@ class FooterPageObjects:
         except TimeoutException:
             return False
 
-    # def find_footer_pop_support(self):
-    #     self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    #
-    #     wait = WebDriverWait(self.driver, 10)
-    #     cookies_locator = (By.CLASS_NAME, 'cookies__btn')
-    #     cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
-    #     cookies_element.click()
-    #
-    #     support_locator = (By.LINK_TEXT, 'Support 24/7')
-    #     support_element = wait.until(EC.element_to_be_clickable(support_locator))
-    #     support_element.click()
-    #
-    # def find_footer_pop_up_chat(self):
-    #     self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    #
-    #     wait = WebDriverWait(self.driver, 10)
-    #     cookies_locator = (By.CLASS_NAME, 'cookies__btn')
-    #     cookies_element = wait.until(EC.element_to_be_clickable(cookies_locator))
-    #     cookies_element.click()
-    #
-    #     chat_locator = (By.XPATH, '//*[@id="Embed"]/div/div/button')
-    #     chat_element = wait.until(EC.element_to_be_clickable(chat_locator))
-    #     chat_element.click()
-    #
 
 
 class FooterPageDownloads:
